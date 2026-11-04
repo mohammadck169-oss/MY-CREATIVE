@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nishad - AI Content Creator & Video Editor Portfolio</title>
+  <meta name="description" content="Portfolio of Mohammed Nishad CK (vavachan_ai) - AI Content Creator, Video Editor & Vibe Coder specializing in generative AI, cinematic video editing, Meta ads, and digital storytelling.">
+  <meta name="keywords" content="AI Content Creator, Video Editor, Nishad, vavachan_ai, Kling, Nano Banana, Meta Ads, Vibe Coding, CapCut, Kerala, India">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#10024;</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="selection:bg-white selection:text-black bg-black text-white">
+
+  <!-- ============================================================== -->
+  <!-- TOP STICKY NAVBAR (Reveals smoothly on scroll) -->
+  <!-- ============================================================== -->
+  <header class="sticky-header fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Creator Name -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <span class="pill-badge pill-badge-sm font-bold tracking-widest text-white border-white/40 group-hover:bg-white group-hover:text-black transition-colors">
+          NISHAD  -  AI CREATOR
+        </span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-[0.88rem] font-medium text-zinc-300">
+        <a href="#about" class="hover:text-white transition-colors">Who I Am</a>
+        <a href="#approach" class="hover:text-white transition-colors">Approach</a>
+        <a href="#services" class="hover:text-white transition-colors">Services</a>
+        <a href="#toolkit" class="hover:text-white transition-colors">Toolkit</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#reviews" class="hover:text-white transition-colors">Reviews</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Right Action Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Deck Mode Switch -->
+        <button id="toggle-deck-mode" class="hidden sm:inline-flex items-center gap-1.5 pill-badge pill-badge-sm" title="Toggle Slide Presentation Mode">
+          <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+          <span id="deck-btn-text">Deck Mode</span>
+        </button>
+
+        <!-- WhatsApp Quick Chat CTA -->
+        <a href="https://wa.me/919744507617?text=Hi%20Nishad,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20collaborate!" target="_blank" class="hidden lg:inline-flex pill-badge filled text-xs">
+          <span>Let's Talk</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1"></i>
+        </a>
+
+        <!-- Menu Drawer Trigger -->
+        <button id="navbar-menu-btn" class="p-2 text-white hover:text-zinc-300 transition-colors focus:outline-none" aria-label="Open Navigation">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================== -->
+  <!-- EDITORIAL FULL NAVIGATION OVERLAY (Triggered by Hamburger '=') -->
+  <!-- ============================================================== -->
+  <div id="editorial-nav-drawer" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex flex-col justify-between p-6 sm:p-12 lg:p-16 opacity-0 pointer-events-none transition-all duration-400 ease-out">
+    
+    <!-- Top Bar inside Drawer: Brand + Close Button -->
+    <div class="flex items-center justify-between w-full">
+      <div class="bg-white text-black font-extrabold text-xs sm:text-sm tracking-[0.2em] uppercase px-6 py-3 select-none">
+        MOHAMMED NISHAD CK
+      </div>
+      <button id="close-nav-drawer-btn" class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-white hover:text-black transition-colors focus:outline-none" aria-label="Close Menu">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Center Navigation Links in Editorial Style -->
+    <div class="max-w-4xl w-full mx-auto my-auto py-8">
+      <nav class="flex flex-col space-y-3 sm:space-y-4">
+        <a href="#about" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">01 WHO I AM</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">ABOUT ME</span>
+        </a>
+        <a href="#approach" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">02 APPROACH</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">PHILOSOPHY</span>
+        </a>
+        <a href="#services" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">03 SERVICES</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">WHAT I OFFER</span>
+        </a>
+        <a href="#toolkit" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">04 TOOLKIT</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">AI &amp; VIDEO PIPELINE</span>
+        </a>
+        <a href="#projects" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">05 PROJECTS</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">FEATURED WORKS</span>
+        </a>
+        <a href="#reviews" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">06 REVIEWS</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">TESTIMONIALS</span>
+        </a>
+        <a href="#contact" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">07 CONTACT</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">GET IN TOUCH</span>
+        </a>
+        <a href="#thankyou" class="drawer-nav-item group flex items-baseline justify-between py-2 border-b border-white/10 hover:border-white transition-colors">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-medium text-white group-hover:translate-x-3 transition-transform">08 OUTRO</span>
+          <span class="text-xs sm:text-sm tracking-widest text-zinc-500 font-mono group-hover:text-white transition-colors">THANK YOU</span>
+        </a>
+      </nav>
+    </div>
+
+    <!-- Bottom Controls & Quick Links inside Drawer -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 w-full pt-6 border-t border-white/15">
+      <div class="flex items-center gap-4 flex-wrap">
+        <button id="drawer-toggle-deck" class="pill-badge pill-badge-sm">
+          <i data-lucide="layers" class="w-3.5 h-3.5 mr-1.5"></i>
+          <span>Toggle Deck Mode</span>
+        </button>
+        <a href="https://wa.me/919744507617" target="_blank" class="pill-badge filled pill-badge-sm">
+          <span>WhatsApp Chat</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1.5"></i>
+        </a>
+      </div>
+      <div class="text-zinc-400 text-xs sm:text-sm flex items-center gap-6">
+        <span>Kerala, India</span>
+        <a href="https://instagram.com/vavachan_ai" target="_blank" class="hover:text-white transition-colors">@vavachan_ai</a>
+        <a href="mailto:wwwnishad740@gmail.com" class="hover:text-white transition-colors">Email</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- SLIDE 1: HERO / COVER (Canva Minimalist Editorial Slide) -->
+  <!-- ============================================================== -->
+  <section id="hero" class="editorial-slide min-h-screen flex flex-col justify-between bg-[#0A0A0A] text-white relative overflow-hidden p-6 sm:p-10 lg:p-14 select-none" data-slide-index="0">
+    
+    <!-- TOP BAR: Minimalist Hamburger Menu -->
+    <div class="flex items-center justify-end w-full z-20 relative">
+      <!-- Minimalist Hamburger Menu Button (Matching Reference "=" Icon) -->
+      <button id="hero-menu-btn" class="hero-menu-btn group flex flex-col items-end justify-center gap-2 p-2 sm:p-3 text-white cursor-pointer focus:outline-none" aria-label="Open Navigation">
+        <span class="w-8 sm:w-9 h-[2px] bg-white transition-all duration-300 group-hover:w-11"></span>
+        <span class="w-8 sm:w-9 h-[2px] bg-white transition-all duration-300 group-hover:w-6"></span>
+      </button>
+    </div>
+
+    <!-- MAIN EDITORIAL CONTENT: "My Creative" -->
+    <div class="w-full my-auto py-8 sm:py-16 relative z-10">
+      <!-- Big Editorial Typography -->
+      <div class="hero-typography-wrap z-20 max-w-5xl">
+        <!-- Line 1: "My" -->
+        <div class="hero-font-heading text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-none">
+          My
+        </div>
+
+        <!-- Line 2: "Creative" -->
+        <div class="hero-font-heading text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-[0.92] mt-2 sm:mt-4">
+          Creative
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM ROW: Bio Description -->
+    <div class="flex items-end justify-start w-full z-20 pt-6">
+      <!-- Bio / Value Proposition Statement -->
+      <div class="max-w-xs sm:max-w-sm md:max-w-md">
+        <p class="text-zinc-400 text-xs sm:text-[0.84rem] md:text-sm leading-relaxed font-normal">
+          AI Content Creator &amp; Video Editor specializing in generative AI, cinematic video editing, Meta ads, and digital storytelling. Turning creative ideas into impactful digital reality.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SLIDE 2: ABOUT / "WHO -> I AM" (Matching Reference Slide 2) -->
+  <!-- ============================================================== -->
+  <section id="about" class="editorial-slide bg-[#F3F1E9]/60 dark:bg-[#171E12]/50" data-slide-index="1">
+    <div class="editorial-container">
+      
+      <!-- Slide Heading Matching Canva Slide 2 -->
+      <div class="text-center md:text-left mb-10">
+        <h2 class="slide-heading group">
+          <span class="italic-part">WHO</span>
+          <span class="bold-part ml-2">I AM</span>
+        </h2>
+        <p class="text-lg md:text-xl text-[#4A563D] dark:text-[#D4DEC7] max-w-3xl mt-3 font-normal">
+          I am a passionate content creator focused on building engaging digital experiences through creative storytelling and impactful content.
+        </p>
+      </div>
+
+      <!-- Main Visual & Bio Layout with Floating Tilted Badges -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Centerpiece Portrait surrounded by Tilted Badges -->
+        <div class="lg:col-span-5 relative flex justify-center py-8">
+          
+          <div class="relative w-full max-w-[340px] aspect-[9/16] rounded-3xl overflow-hidden border-2 border-[#445133] shadow-2xl bg-black">
+            <img src="assets/avatar/nishad-about-full.jpg" alt="Mohammed Nishad CK Full Portrait" class="w-full h-full object-cover block">
+          </div>
+
+          <!-- Tilted Floating Pill 1 (Top Left) -->
+          <div class="floating-badge pill-badge pill-badge-sm animate-float-a top-2 -left-4 sm:-left-8" style="--rot: -8deg; transform: rotate(-8deg);">
+            SOCIAL MEDIA CONTENT
+          </div>
+
+          <!-- Tilted Floating Pill 2 (Middle Left) -->
+          <div class="floating-badge pill-badge pill-badge-sm animate-float-b top-1/3 -left-6 sm:-left-10" style="--rot: 4deg; transform: rotate(4deg);">
+            VIDEO CREATION
+          </div>
+
+          <!-- Tilted Floating Pill 3 (Bottom Left) -->
+          <div class="floating-badge pill-badge pill-badge-sm animate-float-a bottom-8 -left-4 sm:-left-8" style="--rot: -5deg; transform: rotate(-5deg);">
+            BRAND COLLABORATIONS
+          </div>
+
+          <!-- Tilted Floating Pill 4 (Top Right) -->
+          <div class="floating-badge pill-badge pill-badge-sm animate-float-b top-4 -right-4 sm:-right-8" style="--rot: 6deg; transform: rotate(6deg);">
+            CREATIVE CAMPAIGNS
+          </div>
+
+          <!-- Tilted Floating Pill 5 (Middle/Bottom Right) -->
+          <div class="floating-badge pill-badge pill-badge-sm animate-float-a bottom-1/4 -right-6 sm:-right-10" style="--rot: -6deg; transform: rotate(-6deg);">
+            LIFESTYLE & TREND-BASED
+          </div>
+
+        </div>
+
+        <!-- Right: Comprehensive Bio from User Prompt -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <div class="p-6 md:p-8 rounded-3xl border-2 border-[#445133] bg-[#FAF9F5] dark:bg-[#1E2718] shadow-md">
+            
+            <div class="space-y-4 text-base md:text-lg text-[#2F3922] dark:text-[#D4DEC7] leading-relaxed font-normal">
+              <p>
+                I - an AI Content Creator and Video Editor who helps businesses and brands turn ideas into impactful digital content.
+              </p>
+              <p>
+                My work combines creative storytelling, AI-powered image and video generation, professional video editing, and digital marketing to create content that captures attention and communicates a brand - identity. I also explore Meta Ads and vibe coding to bring creative ideas closer to real business goals.
+              </p>
+              <p>
+                I believe every business has a unique story to tell, and the right content can make that story stand out. My approach focuses on creating visually engaging content that builds brand awareness, connects with audiences, and supports business growth.
+              </p>
+              <p>
+                With a strong passion for creativity and emerging technology, I - constantly learning, experimenting, and improving my skills to deliver fresh perspectives and creative solutions.
+              </p>
+              <p class="font-semibold text-[#445133] dark:text-[#A2B887]">
+                I - looking forward to working with business owners, startups, and brands that want to strengthen their online presence and make a lasting impression in the digital world.
+              </p>
+            </div>
+
+            <!-- Sub Badges: Vibe Coding & Core Skills -->
+            <div class="mt-6 pt-5 border-t border-[#445133]/20 flex flex-wrap gap-2.5">
+              <span class="pill-badge pill-badge-sm">VIBE CODING</span>
+              <span class="pill-badge pill-badge-sm">META ADS</span>
+              <span class="pill-badge pill-badge-sm">CHARACTER CREATION</span>
+              <span class="pill-badge pill-badge-sm">CINEMATIC EDITING</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SLIDE 3: PHILOSOPHY / "MY APPROACH -> TO CONTENT" (Matching Slide 3) -->
+  <!-- ============================================================== -->
+  <section id="approach" class="editorial-slide" data-slide-index="2">
+    <div class="editorial-container">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Left: Approach Philosophy & 3 Pillars -->
+        <div class="lg:col-span-7 space-y-6">
+          
+          <h2 class="slide-heading group">
+            <span class="italic-part">MY APPROACH</span>
+            <span class="bold-part block sm:inline sm:ml-2">TO CONTENT</span>
+          </h2>
+
+          <p class="text-xl md:text-2xl font-serif italic text-[#445133] dark:text-[#A2B887] border-l-4 border-[#445133] pl-4 py-1">
+             - believe great content is a blend of creativity, authenticity, and strategy. -           </p>
+
+          <p class="text-[#4A563D] dark:text-[#D4DEC7] text-base leading-relaxed">
+            In an era where millions of videos are published every hour, cookie-cutter templates fail. My content architecture bridges bleeding-edge generative AI algorithms with cinematic filmmaking and performance marketing psychology.
+          </p>
+
+          <!-- 3 Pillars Grid -->
+          <div class="space-y-4 pt-2">
+            
+            <!-- Pillar 1 -->
+            <div class="p-5 rounded-2xl border border-[#445133]/30 bg-[#FAF9F5] dark:bg-[#1E2718] flex items-start gap-4 hover:border-[#445133] transition-colors">
+              <span class="w-10 h-10 rounded-full border-2 border-[#445133] flex items-center justify-center font-display font-bold text-[#445133] dark:text-[#A2B887] shrink-0 text-sm">
+                01
+              </span>
+              <div>
+                <h4 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">Creativity & Generative AI</h4>
+                <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] mt-1">
+                  Harnessing Kling, Nano Banana, Seedance, and Flow to generate visual concepts previously impossible without massive Hollywood budgets.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-5 rounded-2xl border border-[#445133]/30 bg-[#FAF9F5] dark:bg-[#1E2718] flex items-start gap-4 hover:border-[#445133] transition-colors">
+              <span class="w-10 h-10 rounded-full border-2 border-[#445133] flex items-center justify-center font-display font-bold text-[#445133] dark:text-[#A2B887] shrink-0 text-sm">
+                02
+              </span>
+              <div>
+                <h4 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">Authenticity & Storytelling</h4>
+                <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] mt-1">
+                  Relatable dialogue, expressive characters, and emotional resonance that turns passive scrollers into passionate brand advocates.
+                </p>
+              </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-5 rounded-2xl border border-[#445133]/30 bg-[#FAF9F5] dark:bg-[#1E2718] flex items-start gap-4 hover:border-[#445133] transition-colors">
+              <span class="w-10 h-10 rounded-full border-2 border-[#445133] flex items-center justify-center font-display font-bold text-[#445133] dark:text-[#A2B887] shrink-0 text-sm">
+                03
+              </span>
+              <div>
+                <h4 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">Business Strategy & Meta Ads ROI</h4>
+                <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] mt-1">
+                  Engineered hooks, high retention pacing, and conversion-focused calls to action optimized for Instagram Reels and Facebook Ads.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Photographic Visual Panel -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-[380px] rounded-3xl overflow-hidden border-2 border-[#445133] shadow-xl">
+            <img src="assets/boards/ai-reel-lab.jpg" alt="AI Reel Laboratory Showcase" class="w-full h-auto object-cover">
+            <div class="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-[#0F130B]/90 via-[#0F130B]/50 to-transparent text-[#FAF9F5]">
+              <span class="pill-badge pill-badge-sm bg-white/20 text-white border-white/50 backdrop-blur-md mb-2">AI REEL LAB</span>
+              <div class="font-serif italic text-lg"> - ending artistic vision with algorithmic precision. - div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SLIDE 4: SERVICES / "< - HAT I CREATE  -  (Matching Slide 4) -->
+  <!-- ============================================================== -->
+  <section id="services" class="editorial-slide bg-[#F3F1E9]/60 dark:bg-[#171E12]/50" data-slide-index="3">
+    <div class="editorial-container">
+      
+      <!-- Slide Heading Matching Canva Slide 4 -->
+      <div class="text-center mb-10">
+        <h2 class="slide-heading inline-flex items-center justify-center flex-wrap gap-2">
+          <span class="bold-part">WHAT I CREATE</span>
+        </h2>
+        
+        <!-- Category Pill Tags on top (as in Slide 4) -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <span class="pill-badge pill-badge-sm active" data-filter="all">ALL SERVICES</span>
+          <span class="pill-badge pill-badge-sm" data-filter="video">SHORT-FORM VIDEOS</span>
+          <span class="pill-badge pill-badge-sm" data-filter="visuals">PHOTOGRAPHY & VISUALS</span>
+          <span class="pill-badge pill-badge-sm" data-filter="branding">LIFESTYLE & PERSONAL BRANDING</span>
+          <span class="pill-badge pill-badge-sm" data-filter="ads">META ADS & FUNNELS</span>
+        </div>
+      </div>
+
+      <!-- 6 Core Services Grid from User Prompt -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Service 1: AI Content Creation -->
+        <div class="editorial-card service-item" data-category="visuals">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">AI GENERATION</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            AI Content Creation
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Producing high-quality, AI-generated images and videos that elevate brand identity, showcase products, and create visually compelling digital experiences.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Kling & Seedance Video Generation</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Photorealistic Product Renders</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> 4K Upscaling & Texture Enhancement</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="AI Content Creation">
+            Inquire For This Service
+          </button>
+        </div>
+
+        <!-- Service 2: Video Editing -->
+        <div class="editorial-card service-item" data-category="video">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="film" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">POST-PRODUCTION</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            Video Editing
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Crafting professional promotional videos, cinematic visuals, and engaging social media content through precise editing, seamless transitions, and impactful storytelling.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> CapCut & Cinematic Sound Design</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Dynamic Transitions & Match Cuts</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Kinetic Captions & Audio Sync</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="Video Editing">
+            Inquire For This Service
+          </button>
+        </div>
+
+        <!-- Service 3: Social Media Marketing -->
+        <div class="editorial-card service-item" data-category="branding">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">GROWTH & AUDIENCE</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            Social Media Marketing
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Developing creative content strategies that strengthen brand positioning, increase audience engagement, and build a consistent online presence.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Instagram Reels Calendar Planning</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Viral Trend Analysis & Pacing</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Community Engagement Strategies</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="Social Media Marketing">
+            Inquire For This Service
+          </button>
+        </div>
+
+        <!-- Service 4: Meta Ads -->
+        <div class="editorial-card service-item" data-category="ads">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="target" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">PAID ACQUISITION</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            Meta Ads
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Creating attention-grabbing ad creatives and supporting targeted Facebook and Instagram advertising campaigns to connect businesses with potential customers.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> High-CTR Ad Creatives & Video Hooks</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> A/B Testing Visual Variants</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Conversion-Optimized Copywriting</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="Meta Ads">
+            Inquire For This Service
+          </button>
+        </div>
+
+        <!-- Service 5: Vibe Coding -->
+        <div class="editorial-card service-item" data-category="visuals">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="code-2" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">INTERACTIVE TECH</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            Vibe Coding
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Building modern websites, landing pages, and interactive digital experiences using AI-powered tools and creative problem-solving.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Fast, Responsive Portfolio & Landing Pages</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Interactive Web Experiences & Animations</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> AI-Integrated Digital Prototypes</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="Vibe Coding">
+            Inquire For This Service
+          </button>
+        </div>
+
+        <!-- Service 6: Creative Storytelling -->
+        <div class="editorial-card service-item" data-category="branding">
+          <div class="w-12 h-12 rounded-2xl bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mb-5">
+            <i data-lucide="book-open" class="w-6 h-6"></i>
+          </div>
+          <span class="pill-badge pill-badge-sm mb-3">NARRATIVE & CHARACTERS</span>
+          <h3 class="font-display font-bold text-xl text-[#1F2716] dark:text-[#FAF9F5] mb-2">
+            Creative Storytelling
+          </h3>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed">
+            Characters, storylines, dialogues, concepts, and cinematic scenes designed to capture imagination and build lasting emotional connection.
+          </p>
+          <ul class="mt-4 space-y-1.5 text-xs text-[#728063] dark:text-[#8E9F7F] font-medium border-t border-[#445133]/15 pt-3">
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Character Universe & Lore Creation</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Scriptwriting & Dialogue Polish</li>
+            <li class="flex items-center gap-1.5"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Cinematic Storyboard Development</li>
+          </ul>
+          <button class="mt-5 w-full pill-badge pill-badge-sm justify-center open-inquiry-btn" data-service="Creative Storytelling">
+            Inquire For This Service
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- TOOLKIT & STACK (Matching User's Tool Categories) -->
+  <!-- ============================================================== -->
+  <section id="toolkit" class="editorial-slide" data-slide-index="4">
+    <div class="editorial-container">
+      
+      <div class="text-center md:text-left mb-12">
+        <div class="inline-flex items-center gap-2 pill-badge pill-badge-sm mb-3">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span>CREATIVE ENGINE & SOFTWARE</span>
+        </div>
+        <h2 class="slide-heading group">
+          <span class="italic-part">TOOLS &amp;</span>
+          <span class="bold-part">TECH STACK</span>
+        </h2>
+        <p class="text-[#4A563D] dark:text-[#D4DEC7] text-lg max-w-2xl mt-2">
+          The curated suite of foundational LLMs, generative video synthesis tools, and professional editing software I deploy on client projects.
+        </p>
+      </div>
+
+      <!-- 3 Categorized Columns from User Prompt -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Category 1: AI CORE -->
+        <div class="editorial-card space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-[#445133]/20">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="bot" class="w-5 h-5 text-[#445133] dark:text-[#A2B887]"></i>
+              <h3 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">AI CORE</h3>
+            </div>
+            <span class="text-xs font-bold text-[#728063] dark:text-[#8E9F7F]">3 ENGINES</span>
+          </div>
+          <p class="text-xs text-[#728063] dark:text-[#8E9F7F]">
+            Prompt engineering, narrative structuring, dialogue generation, and strategic ideation.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">ChatGPT</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Script & Prompts</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Gemini</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Multimodal Vision</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Claude</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Nuanced Storytelling</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 2: AI IMAGE / VIDEO -->
+        <div class="editorial-card space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-[#445133]/20">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="video" class="w-5 h-5 text-[#445133] dark:text-[#A2B887]"></i>
+              <h3 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">AI IMAGE / VIDEO</h3>
+            </div>
+            <span class="text-xs font-bold text-[#728063] dark:text-[#8E9F7F]">5 PLATFORMS</span>
+          </div>
+          <p class="text-xs text-[#728063] dark:text-[#8E9F7F]">
+            Generative character animation, hyper-realistic motion physics, camera controls, and styling.
+          </p>
+
+          <div class="space-y-2.5 pt-2">
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Nano Banana</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Visual Synthesis</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">OminiFlash</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Real-Time Gen</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-teal-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Seedance</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Motion Dynamics</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Kling</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Cinematic AI Video</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Flow</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Seamless Animation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Category 3: DESIGN / EDITING -->
+        <div class="editorial-card space-y-4">
+          <div class="flex items-center justify-between pb-3 border-b border-[#445133]/20">
+            <div class="flex items-center gap-2.5">
+              <i data-lucide="palette" class="w-5 h-5 text-[#445133] dark:text-[#A2B887]"></i>
+              <h3 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">DESIGN / EDITING</h3>
+            </div>
+            <span class="text-xs font-bold text-[#728063] dark:text-[#8E9F7F]">3 STUDIOS</span>
+          </div>
+          <p class="text-xs text-[#728063] dark:text-[#8E9F7F]">
+            Color grading, typography hierarchy, multi-track audio engineering, and social exports.
+          </p>
+
+          <div class="space-y-3 pt-2">
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-600"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Lightroom</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Color Grading & Tone</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-violet-600"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">Canva</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Editorial Layouts & Deck</span>
+            </div>
+
+            <div class="tool-chip w-full justify-between">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-rose-600"></span>
+                <span class="font-bold text-[#1F2716] dark:text-[#FAF9F5]">CapCut</span>
+              </div>
+              <span class="text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold">Pro Video Editing & FX</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- PROJECTS & ACHIEVEMENTS (The 4 Headline Works Requested) -->
+  <!-- ============================================================== -->
+  <section id="projects" class="editorial-slide bg-[#F3F1E9]/60 dark:bg-[#171E12]/50" data-slide-index="5">
+    <div class="editorial-container">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div>
+          <span class="pill-badge pill-badge-sm mb-3">CURATED PORTFOLIO</span>
+          <h2 class="slide-heading group">
+            <span class="italic-part">PROJECTS &amp;</span>
+            <span class="bold-part block sm:inline">ACHIEVEMENTS</span>
+          </h2>
+          <p class="text-[#4A563D] dark:text-[#D4DEC7] text-base md:text-lg mt-2">
+            Featuring 4 flagship productions: Tom, Dalla &amp; Luqma, Cartoon, and Perfume.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2">
+          <button class="pill-badge pill-badge-sm active project-filter-btn" data-filter="all">All (4)</button>
+          <button class="pill-badge pill-badge-sm project-filter-btn" data-filter="ai-video">AI Video</button>
+          <button class="pill-badge pill-badge-sm project-filter-btn" data-filter="commercial">Commercial</button>
+        </div>
+      </div>
+
+      <!-- 4 Projects Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+        
+        <!-- PROJECT 1: TOM -->
+        <div class="project-card group" data-category="ai-video" onclick="openProjectModal('tom-jerry')">
+          <div class="project-thumb relative overflow-hidden bg-black aspect-[16/10]">
+            <video 
+              src="assets/projects/tom.mp4" 
+              poster="assets/projects/tom-jerry.svg" 
+              class="w-full h-full object-cover block"
+              autoplay 
+              loop 
+              muted 
+              playsinline
+            ></video>
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+              <span>AI VIDEO REEL</span>
+            </div>
+            <div class="absolute bottom-4 right-4 bg-[#445133] text-white px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow-lg">
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i>
+              <span>Watch Video</span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold mb-1">
+                <span>KLING  - ANO BANANA  - APCUT</span>
+                <span class="text-emerald-600 font-bold">2M+ Views</span>
+              </div>
+              <h3 class="font-display font-extrabold text-2xl text-[#1F2716] dark:text-[#FAF9F5] group-hover:text-[#445133] dark:group-hover:text-[#A2B887] transition-colors">
+                TOM
+              </h3>
+              <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed mt-2">
+                A hyper-realistic cinematic reimagining of the iconic Tom &amp; Jerry chase sequence. Using Kling and Nano Banana for character physics and expressive comedic facial acting.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#445133]/15 flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-[#445133] dark:text-[#A2B887]">
+              <span>Creative AI Direction &amp; Sound Design</span>
+              <a href="https://www.instagram.com/reel/De_Di-mJ6C7/?vrfl=MWlrdjFzcnlmMDlqcw==" target="_blank" onclick="event.stopPropagation()" class="pill-badge pill-badge-sm bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white border-none font-bold shadow-sm hover:scale-105 transition-transform flex items-center gap-1.5" title="Watch Original Reel on Instagram">
+                <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                <span>Watch on Instagram Reel (2M+)</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: DALLA & LUQMA -->
+        <div class="project-card group" data-category="commercial" onclick="openProjectModal('shareef-work')">
+          <div class="project-thumb">
+            <img src="assets/projects/shareef-work.svg" alt="Dalla &amp; Luqma Brand Commercial">
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold tracking-wider">
+              BRAND CAMPAIGN &amp; ADS
+            </div>
+            <div class="absolute bottom-4 right-4 bg-[#445133] text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold mb-1">
+                <span>CAPCUT  - IGHTROOM  - ETA ADS</span>
+                <span class="text-emerald-600 font-bold">5.8x ROAS</span>
+              </div>
+              <h3 class="font-display font-extrabold text-2xl text-[#1F2716] dark:text-[#FAF9F5] group-hover:text-[#445133] dark:group-hover:text-[#A2B887] transition-colors">
+                DALLA &amp; LUQMA
+              </h3>
+              <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed mt-2">
+                End-to-end commercial promotional suite combining high-impact cinematic cuts, targeted Meta Ads funnels, and brand positioning that boosted client conversions by 340%.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#445133]/15 flex items-center justify-between text-xs font-semibold text-[#445133] dark:text-[#A2B887]">
+              <span>Video Production &amp; Ad Growth</span>
+              <span class="underline">Explore Details</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3: CARTOON -->
+        <div class="project-card group" data-category="ai-video" onclick="openProjectModal('cartoons')">
+          <div class="project-thumb relative overflow-hidden bg-black aspect-[16/10]">
+            <video 
+              src="assets/projects/cartoon.mp4" 
+              poster="assets/projects/cartoons.svg" 
+              class="w-full h-full object-cover block"
+              autoplay 
+              loop 
+              muted 
+              playsinline
+            ></video>
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold tracking-wider flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+              <span>ORIGINAL IP &amp; SERIES</span>
+            </div>
+            <div class="absolute bottom-4 right-4 bg-[#445133] text-white px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 opacity-90 group-hover:opacity-100 transition-opacity shadow-lg">
+              <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i>
+              <span>Watch Video</span>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold mb-1">
+                <span>FLOW  - EEDANCE  - HATGPT</span>
+                <span class="text-emerald-600 font-bold">Original Series</span>
+              </div>
+              <h3 class="font-display font-extrabold text-2xl text-[#1F2716] dark:text-[#FAF9F5] group-hover:text-[#445133] dark:group-hover:text-[#A2B887] transition-colors">
+                CARTOON
+              </h3>
+              <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed mt-2">
+                Original AI animated universe featuring quirky character design, humorous scriptwriting, voice synchronization, and rich atmospheric scene rendering for viral short-form media.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#445133]/15 flex flex-wrap items-center justify-between gap-2 text-xs font-semibold text-[#445133] dark:text-[#A2B887]">
+              <span>Character Design &amp; Storyboards</span>
+              <a href="https://www.instagram.com/reel/De57nBcJzfc/?cplk=MXZ6OTVqMzc3M2g3bw==" target="_blank" onclick="event.stopPropagation()" class="pill-badge pill-badge-sm bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white border-none font-bold shadow-sm hover:scale-105 transition-transform flex items-center gap-1.5" title="Watch Original Reel on Instagram">
+                <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+                <span>Watch on Instagram Reel</span>
+                <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4: PERFUME -->
+        <div class="project-card group" data-category="commercial" onclick="openProjectModal('perfume')">
+          <div class="project-thumb">
+            <img src="assets/projects/perfume.svg" alt="Luxury Perfume Commercial Spot">
+            <div class="absolute top-4 left-4 bg-black/70 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold tracking-wider">
+              LUXURY PRODUCT AD
+            </div>
+            <div class="absolute bottom-4 right-4 bg-[#445133] text-white px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>View Case Study</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </div>
+          </div>
+          <div class="p-6 space-y-3 flex-1 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between text-xs text-[#728063] dark:text-[#8E9F7F] font-semibold mb-1">
+                <span>OMINIFLASH  - LING  - IGHTROOM</span>
+                <span class="text-emerald-600 font-bold">High Aesthetic</span>
+              </div>
+              <h3 class="font-display font-extrabold text-2xl text-[#1F2716] dark:text-[#FAF9F5] group-hover:text-[#445133] dark:group-hover:text-[#A2B887] transition-colors">
+                PERFUME
+              </h3>
+              <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed mt-2">
+                A high-fashion luxury fragrance commercial spot featuring golden volumetric lighting, slow-motion airborne liquid droplets, and photorealistic glass reflection modeling.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-[#445133]/15 flex items-center justify-between text-xs font-semibold text-[#445133] dark:text-[#A2B887]">
+              <span>3D Product Elevation &amp; Cinematics</span>
+              <span class="underline">Explore Details</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- TESTIMONIALS / "Cliend Reviews" (From User Request) -->
+  <!-- ============================================================== -->
+  <section id="reviews" class="editorial-slide" data-slide-index="6">
+    <div class="editorial-container">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="pill-badge pill-badge-sm mb-3">SOCIAL PROOF</span>
+        <h2 class="slide-heading">
+          <span class="italic-part">CLIENT</span>
+          <span class="bold-part ml-2">REVIEWS</span>
+        </h2>
+        <p class="text-[#4A563D] dark:text-[#D4DEC7] text-base mt-2">
+          What founders and brands say after collaborating on AI content and video production.
+        </p>
+      </div>
+
+      <!-- Featured Testimonial Box (Directly from User Prompt) -->
+      <div class="max-w-4xl mx-auto p-8 md:p-12 rounded-3xl border-2 border-[#445133] bg-[#FAF9F5] dark:bg-[#1E2718] shadow-xl text-center relative">
+        <div class="w-16 h-16 rounded-full bg-[#445133]/15 text-[#445133] dark:text-[#A2B887] flex items-center justify-center mx-auto mb-6 text-3xl font-serif">
+           -         </div>
+        
+        <blockquote class="font-serif italic text-2xl md:text-3xl text-[#1F2716] dark:text-[#FAF9F5] leading-relaxed mb-6">
+          "Professional, creative, and delivered high-quality AI content that exceeded expectations."
+        </blockquote>
+
+        <div class="flex items-center justify-center gap-1 text-amber-500 mb-3">
+          <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+          <i data-lucide="star" class="w-5 h-5 fill-amber-500"></i>
+        </div>
+
+        <div class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5]">Verified Client Review</div>
+        <div class="text-sm text-[#728063] dark:text-[#8E9F7F]">Brand Campaign &amp; AI Video Production</div>
+      </div>
+
+      <!-- Secondary Review Cards -->
+      <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="editorial-card">
+          <div class="flex items-center gap-1 text-amber-500 mb-2">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+          </div>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] italic mb-4">
+             - shad's ability to blend AI image generation with CapCut cinematic pacing brought our brand reels to life in a way traditional video teams couldn't. -           </p>
+          <div class="font-bold text-xs text-[#1F2716] dark:text-[#FAF9F5]">Commercial Client</div>
+          <div class="text-xs text-[#728063] dark:text-[#8E9F7F]">E-Commerce Brand Founder</div>
+        </div>
+
+        <div class="editorial-card">
+          <div class="flex items-center gap-1 text-amber-500 mb-2">
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+            <i data-lucide="star" class="w-4 h-4 fill-amber-500"></i>
+          </div>
+          <p class="text-sm text-[#4A563D] dark:text-[#D4DEC7] italic mb-4">
+             - st turnaround, exceptional visual taste, and profound mastery over prompt crafting and Meta Ads. A true modern creative asset. -           </p>
+          <div class="font-bold text-xs text-[#1F2716] dark:text-[#FAF9F5]">Agency Director</div>
+          <div class="text-xs text-[#728063] dark:text-[#8E9F7F]">Digital Marketing Studio</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- CONTACT SECTION (Refined Alignment & Monochrome Styling) -->
+  <!-- ============================================================== -->
+  <section id="contact" class="editorial-slide bg-[#0A0A0A] text-white" data-slide-index="7">
+    <div class="editorial-container max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+        
+        <!-- Left: Contact Details & Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="pill-badge pill-badge-sm border-white/30 text-white/80">GET IN TOUCH</span>
+          
+          <h2 class="slide-heading">
+            <span class="italic-part block text-3xl sm:text-4xl lg:text-5xl font-serif italic text-white/80">LET'S</span>
+            <span class="bold-part block text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-none mt-1">CONNECT</span>
+          </h2>
+          
+          <p class="text-zinc-400 text-sm sm:text-base leading-relaxed max-w-md">
+            Ready to bring your brand to life with AI content, cinematic video editing, Meta Ads, or vibe coding? Reach out directly via WhatsApp, call, or email.
+          </p>
+
+          <!-- Direct Info Cards -->
+          <div class="space-y-4 pt-1">
+            
+            <!-- Phone / WhatsApp -->
+            <a href="https://wa.me/919744507617?text=Hello%20Nishad,%20let's%20discuss%20a%20project!" target="_blank" class="editorial-card flex items-center justify-between p-4 bg-[#121214] border border-white/10 hover:border-white/30 rounded-2xl group transition-all">
+              <div class="flex items-center gap-3.5">
+                <div class="w-11 h-11 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/20">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="text-[11px] text-zinc-400 font-semibold tracking-wider uppercase">Phone / WhatsApp</div>
+                  <div class="font-bold text-white text-base">+91 9744507617</div>
+                </div>
+              </div>
+              <button type="button" class="copy-btn pill-badge pill-badge-sm" data-copy="+919744507617" title="Copy Phone Number">
+                Copy
+              </button>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:wwwnishad740@gmail.com" class="editorial-card flex items-center justify-between p-4 bg-[#121214] border border-white/10 hover:border-white/30 rounded-2xl group transition-all">
+              <div class="flex items-center gap-3.5 overflow-hidden">
+                <div class="w-11 h-11 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center border border-blue-500/20 shrink-0">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-[11px] text-zinc-400 font-semibold tracking-wider uppercase">Email</div>
+                  <div class="font-bold text-white text-sm sm:text-base break-all">wwwnishad740@gmail.com</div>
+                </div>
+              </div>
+              <button type="button" class="copy-btn pill-badge pill-badge-sm shrink-0" data-copy="wwwnishad740@gmail.com" title="Copy Email">
+                Copy
+              </button>
+            </a>
+
+            <!-- Instagram Handles -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <a href="https://instagram.com/vavachan_ai" target="_blank" class="editorial-card p-3.5 bg-[#121214] border border-white/10 hover:border-white/30 rounded-2xl flex items-center gap-3 group transition-all">
+                <div class="relative w-10 h-10 shrink-0">
+                  <img src="assets/avatar/primary-ig-dp.jpg" alt="@vavachan_ai" class="w-10 h-10 rounded-full object-cover object-[center_38%] ring-2 ring-pink-500/60 p-0.5 group-hover:scale-105 transition-transform">
+                  <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 text-white flex items-center justify-center shadow-sm">
+                    <i data-lucide="instagram" class="w-2 h-2"></i>
+                  </div>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Primary IG</div>
+                  <div class="font-bold text-xs text-white truncate group-hover:text-zinc-300">@vavachan_ai</div>
+                </div>
+              </a>
+
+              <a href="https://instagram.com/niishadhh_" target="_blank" class="editorial-card p-3.5 bg-[#121214] border border-white/10 hover:border-white/30 rounded-2xl flex items-center gap-3 group transition-all">
+                <div class="relative w-10 h-10 shrink-0">
+                  <img src="assets/avatar/personal-ig-dp.jpg" alt="@niishadhh_" class="w-10 h-10 rounded-full object-cover object-[center_50%] ring-2 ring-pink-500/60 p-0.5 group-hover:scale-105 transition-transform">
+                  <div class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-gradient-to-tr from-yellow-500 via-pink-600 to-purple-600 text-white flex items-center justify-center shadow-sm">
+                    <i data-lucide="instagram" class="w-2 h-2"></i>
+                  </div>
+                </div>
+                <div class="overflow-hidden">
+                  <div class="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Personal IG</div>
+                  <div class="font-bold text-xs text-white truncate group-hover:text-zinc-300">@niishadhh_</div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Instant Inquiry Form (Direct to WhatsApp or Email) -->
+        <div class="lg:col-span-7">
+          <div class="p-6 sm:p-8 lg:p-10 rounded-3xl border border-white/15 bg-[#121214] shadow-2xl space-y-6">
+            <div>
+              <h3 class="font-display font-bold text-2xl sm:text-3xl text-white mb-2">
+                Send a Direct Project Inquiry
+              </h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">
+                Fill in your project details to launch an instant pre-formatted conversation on WhatsApp.
+              </p>
+            </div>
+
+            <form id="inquiry-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Your Name</label>
+                  <input type="text" id="client-name" required placeholder="e.g. Rahul Sharma" class="w-full px-4 py-3 rounded-xl border border-white/15 bg-black/60 text-white placeholder-zinc-500 focus:outline-none focus:border-white transition-colors">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Brand / Company</label>
+                  <input type="text" id="client-brand" placeholder="e.g. Luxe Studio" class="w-full px-4 py-3 rounded-xl border border-white/15 bg-black/60 text-white placeholder-zinc-500 focus:outline-none focus:border-white transition-colors">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Service Needed</label>
+                <select id="client-service" class="w-full px-4 py-3 rounded-xl border border-white/15 bg-[#0A0A0C] text-white focus:outline-none focus:border-white transition-colors">
+                  <option value="AI Content Creation">AI Content Creation (Images & Videos)</option>
+                  <option value="Video Editing">Video Editing (CapCut & Reels)</option>
+                  <option value="Social Media Marketing">Social Media Marketing</option>
+                  <option value="Meta Ads">Meta Ads Creative & Campaigns</option>
+                  <option value="Vibe Coding">Vibe Coding (Websites & Landing Pages)</option>
+                  <option value="Creative Storytelling">Creative Storytelling & Characters</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Project Overview / Goals</label>
+                <textarea id="client-message" rows="4" required placeholder="Describe your project, deadlines, and what you aim to achieve..." class="w-full px-4 py-3 rounded-xl border border-white/15 bg-black/60 text-white placeholder-zinc-500 focus:outline-none focus:border-white transition-colors"></textarea>
+              </div>
+
+              <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                <button type="submit" class="pill-badge filled pill-badge-lg flex-1 justify-center gap-2">
+                  <i data-lucide="message-square" class="w-4 h-4"></i>
+                  <span>Send via WhatsApp</span>
+                </button>
+                <a href="mailto:wwwnishad740@gmail.com" class="pill-badge pill-badge-lg justify-center gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>Send via Email</span>
+                </a>
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- SLIDE 9: OUTRO / "THANK YOU" (Minimalist Editorial Slide) -->
+  <!-- ============================================================== -->
+  <section id="thankyou" class="editorial-slide min-h-screen flex flex-col justify-between bg-[#0A0A0A] text-white relative overflow-hidden p-6 sm:p-10 lg:p-14 select-none" data-slide-index="8">
+    
+    <!-- TOP SECTION: Outro Note & Quick Actions -->
+    <div class="w-full max-w-2xl space-y-5 pt-4">
+      <span class="pill-badge pill-badge-sm border-white/30 text-white/80">OUTRO</span>
+      <p class="text-zinc-400 text-sm sm:text-base md:text-lg leading-relaxed font-normal">
+        Thank you for exploring my creative space. Open for visionary commercial collaborations, AI content production, cinematic video editing, and digital brand elevation.
+      </p>
+      <div class="pt-2 flex items-center gap-3 flex-wrap">
+        <a href="https://wa.me/919744507617" target="_blank" class="pill-badge filled pill-badge-sm">
+          <span>Start a Project</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 ml-1.5"></i>
+        </a>
+        <a href="https://instagram.com/vavachan_ai" target="_blank" class="pill-badge pill-badge-sm">
+          <span>Instagram @vavachan_ai</span>
+        </a>
+        <a href="#hero" class="pill-badge pill-badge-sm">
+          <span>Back to Top</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- BOTTOM ROW: Massive "Thank You" Typography -->
+    <div class="w-full pt-12 mt-auto">
+      <div class="hero-font-heading text-6xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[10rem] font-normal tracking-tight text-white leading-none">
+        Thank You
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================== -->
+  <!-- FOOTER -->
+  <!-- ============================================================== -->
+  <footer class="py-10 border-t border-white/10 bg-[#0A0A0A] text-zinc-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-white tracking-wider">NISHAD</span>
+        <span class="text-zinc-600">•</span>
+        <span>AI Content Creator &amp; Video Editor</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#hero" class="hover:text-white transition-colors">Back to Top</a>
+        <a href="https://instagram.com/vavachan_ai" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <img src="assets/avatar/primary-ig-dp.jpg" alt="@vavachan_ai" class="w-4 h-4 rounded-full object-cover object-[center_38%] inline-block ring-1 ring-pink-500/40">
+          <span>@vavachan_ai</span>
+        </a>
+        <a href="https://instagram.com/niishadhh_" target="_blank" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <img src="assets/avatar/personal-ig-dp.jpg" alt="@niishadhh_" class="w-4 h-4 rounded-full object-cover object-[center_50%] inline-block ring-1 ring-pink-500/40">
+          <span>@niishadhh_</span>
+        </a>
+      </div>
+      <div class="text-xs text-zinc-500">
+        © 2026 Mohammed Nishad CK. Powered by Vibe Coding.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================== -->
+  <!-- FLOATING SLIDE DECK CONTROLLER (For Presentation Mode) -->
+  <!-- ============================================================== -->
+  <div class="slide-deck-controller" id="deck-controller" style="display: none;">
+    <button class="deck-btn" id="deck-prev-btn" title="Previous Slide (Arrow Left)">
+      <i data-lucide="chevron-left" class="w-5 h-5"></i>
+    </button>
+    <div class="deck-indicator" id="deck-indicator">
+      Slide 1 / 9
+    </div>
+    <button class="deck-btn" id="deck-next-btn" title="Next Slide (Arrow Right)">
+      <i data-lucide="chevron-right" class="w-5 h-5"></i>
+    </button>
+    <button class="deck-btn ml-2" id="deck-exit-btn" title="Exit Presentation Mode">
+      <i data-lucide="x" class="w-4 h-4"></i>
+    </button>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- CASE STUDY MODAL -->
+  <!-- ============================================================== -->
+  <div class="modal-backdrop" id="case-study-modal">
+    <div class="modal-dialog">
+      <div class="sticky top-0 z-20 flex items-center justify-between p-5 bg-[#FAF9F5] dark:bg-[#1E2718] border-b border-[#445133]/20">
+        <div>
+          <span class="pill-badge pill-badge-sm mb-1" id="modal-category">PROJECT CASE STUDY</span>
+          <h3 class="font-display font-extrabold text-2xl text-[#1F2716] dark:text-[#FAF9F5]" id="modal-title">Project Title</h3>
+        </div>
+        <button class="w-10 h-10 rounded-full border border-[#445133]/30 flex items-center justify-center text-[#445133] dark:text-[#A2B887] hover:bg-[#445133]/15 transition-colors" onclick="closeProjectModal()">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="p-6 md:p-8 space-y-6">
+        <div class="w-full rounded-2xl overflow-hidden border border-[#445133]/20 max-h-[460px] bg-black flex items-center justify-center">
+          <img src="" id="modal-image" class="w-full h-full object-cover" alt="Project Preview">
+          <video src="" id="modal-video" controls playsinline class="w-full max-h-[460px] object-contain hidden"></video>
+        </div>
+
+        <!-- Direct Video / Reel Link Underneath Player -->
+        <div id="modal-link-row" class="flex items-center justify-between p-3 rounded-xl bg-gradient-to-r from-purple-900/10 via-pink-900/10 to-amber-900/10 border border-[#445133]/20">
+          <div class="flex items-center gap-2 text-xs font-bold text-[#1F2716] dark:text-[#FAF9F5]">
+            <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i>
+            <span>Watch Original Reel on Instagram:</span>
+          </div>
+          <a id="modal-reel-link" href="https://www.instagram.com/reel/De_Di-mJ6C7/?vrfl=MWlrdjFzcnlmMDlqcw==" target="_blank" class="pill-badge pill-badge-sm bg-gradient-to-r from-purple-600 via-pink-600 to-amber-500 text-white border-none font-bold shadow-sm hover:scale-105 transition-transform flex items-center gap-1.5">
+            <span>Open Reel</span>
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-2xl bg-[#445133]/10 text-center">
+          <div>
+            <div class="text-xs text-[#728063] dark:text-[#8E9F7F] font-bold">TOOLS USED</div>
+            <div class="font-bold text-sm text-[#1F2716] dark:text-[#FAF9F5] mt-0.5" id="modal-tools">Kling, Nano Banana</div>
+          </div>
+          <div>
+            <div class="text-xs text-[#728063] dark:text-[#8E9F7F] font-bold">ROLE</div>
+            <div class="font-bold text-sm text-[#1F2716] dark:text-[#FAF9F5] mt-0.5" id="modal-role">AI Creator &amp; Editor</div>
+          </div>
+          <div>
+            <div class="text-xs text-[#728063] dark:text-[#8E9F7F] font-bold">IMPACT</div>
+            <div class="font-bold text-sm text-emerald-600 mt-0.5" id="modal-impact">Exceeded Expectations</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5] mb-2">Project Overview</h4>
+          <p class="text-sm md:text-base text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed" id="modal-desc">
+            Description goes here...
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-display font-bold text-lg text-[#1F2716] dark:text-[#FAF9F5] mb-2">Production Pipeline &amp; Approach</h4>
+          <p class="text-sm md:text-base text-[#4A563D] dark:text-[#D4DEC7] leading-relaxed" id="modal-pipeline">
+            Workflow details...
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-[#445133]/20 flex justify-end gap-3">
+          <button class="pill-badge" onclick="closeProjectModal()">Close</button>
+          <a href="https://wa.me/919744507617?text=Hi%20Nishad,%20I'd%20love%20to%20create%20a%20project%20similar%20to%20this!" target="_blank" class="pill-badge filled">
+            Inquire Similar Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- TOAST NOTIFICATION -->
+  <!-- ============================================================== -->
+  <div class="toast-notice" id="toast-notification">
+    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+    <span id="toast-message">Copied to clipboard!</span>
+  </div>
+
+  <!-- ============================================================== -->
+  <!-- FULLSCREEN PHOTO LIGHTBOX MODAL -->
+  <!-- ============================================================== -->
+  <div class="modal-backdrop" id="fullscreen-photo-modal" onclick="closeFullscreenPhoto()">
+    <div class="relative max-w-full max-h-[96vh] p-2 flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+      <button class="absolute top-4 right-4 w-12 h-12 rounded-full bg-black/80 text-white flex items-center justify-center hover:bg-black transition-colors z-30" onclick="closeFullscreenPhoto()" title="Close Fullscreen">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <img 
+        src="assets/avatar/nishad-hero-new.jpg" 
+        alt="Mohammed Nishad CK Fullscreen Portrait" 
+        class="max-h-[90vh] max-w-[95vw] w-auto h-auto object-contain rounded-2xl shadow-2xl border-2 border-[#445133]"
+      >
+      <div class="mt-3 text-center text-[#FAF9F5] text-xs sm:text-sm font-semibold tracking-wider bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-md">
+        MOHAMMED NISHAD CK  - I CONTENT CREATOR &amp; VIDEO EDITOR
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+/* ==========================================================================
+   NISHAD PORTFOLIO - LUXURY BLACK & WHITE MONOCHROME DESIGN SYSTEM
+   Palette: Pitch Black, Crisp White, Refined Silver, Charcoal
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syne:wght@400..800&display=swap');
+
+:root {
+  /* High-Contrast Black & White Luxury Palette */
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0C;
+  --bg-surface: #121214;
+  --bg-elevated: #18181B;
+  
+  --text-primary: #FFFFFF;
+  --text-secondary: #D4D4D8;
+  --text-muted: #A1A1AA;
+  
+  --bw-primary: #FFFFFF;
+  --bw-deep: #E4E4E7;
+  --bw-light: #FAFAFA;
+  --bw-subtle: #27272A;
+  --bw-border: rgba(255, 255, 255, 0.45);
+  --bw-border-light: rgba(255, 255, 255, 0.18);
+  --bw-border-strong: #FFFFFF;
+  
+  --accent-gold: #F59E0B;
+  --accent-emerald: #10B981;
+  
+  --shadow-subtle: 0 4px 20px -2px rgba(0, 0, 0, 0.7);
+  --shadow-medium: 0 12px 32px -4px rgba(0, 0, 0, 0.85);
+  --shadow-hover: 0 20px 40px -8px rgba(255, 255, 255, 0.08);
+  
+  --radius-pill: 9999px;
+  --radius-card: 20px;
+  --radius-card-lg: 28px;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  
+  --nav-height: 80px;
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Global Resets & Base
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+::selection {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   Typography Styles Matching Editorial Slides
+   -------------------------------------------------------------------------- */
+.font-serif { font-family: var(--font-serif); }
+.font-sans { font-family: var(--font-sans); }
+.font-display { font-family: var(--font-display); }
+.font-outfit { font-family: var(--font-outfit); }
+
+.editorial-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--bw-primary);
+}
+
+.editorial-bold {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--bw-primary);
+}
+
+.slide-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  color: var(--bw-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.slide-heading .italic-part {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.slide-heading .bold-part {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-weight: 800;
+  display: inline-block;
+}
+
+.slide-arrow {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Canva Aesthetic Pill Badges & Buttons (Black & White Inversion)
+   -------------------------------------------------------------------------- */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--bw-border);
+  background-color: transparent;
+  color: var(--bw-primary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  white-space: nowrap;
+}
+
+.pill-badge:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.pill-badge.active,
+.pill-badge.filled {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+  font-weight: 800;
+}
+
+.pill-badge.filled:hover {
+  background-color: #E4E4E7;
+  color: #000000;
+  transform: translateY(-2px);
+}
+
+.pill-badge-sm {
+  padding: 0.4rem 1.1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.pill-badge-lg {
+  padding: 0.9rem 2.4rem;
+  font-size: 0.95rem;
+}
+
+/* Floating Badges for Slide 2 (WHO -> I AM) */
+.floating-badge {
+  position: absolute;
+  z-index: 10;
+  box-shadow: var(--shadow-medium);
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--bw-border);
+  color: var(--text-primary);
+  backdrop-filter: blur(8px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  user-select: none;
+}
+
+.floating-badge:hover {
+  transform: scale(1.08) translateY(-4px) !important;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
+}
+
+/* Keyframe Floating Drift */
+@keyframes floatSubtleA {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--rot, 0deg)); }
+}
+
+@keyframes floatSubtleB {
+  0%, 100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+  50% { transform: translateY(8px) rotate(var(--rot, 0deg)); }
+}
+
+.animate-float-a {
+  animation: floatSubtleA 6s ease-in-out infinite;
+}
+
+.animate-float-b {
+  animation: floatSubtleB 7s ease-in-out infinite 0.8s;
+}
+
+/* --------------------------------------------------------------------------
+   Editorial Slide Sections
+   -------------------------------------------------------------------------- */
+.editorial-slide {
+  position: relative;
+  min-height: 100vh;
+  padding: 7rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1.5px solid var(--bw-border-light);
+  background-color: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .editorial-slide {
+    padding: 5.5rem 1.25rem 3.5rem;
+    min-height: auto;
+  }
+}
+
+.editorial-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Slide 1: Canva Hero / Cover Minimalist Aesthetic
+   -------------------------------------------------------------------------- */
+#hero.editorial-slide {
+  min-height: 100vh;
+  padding: 2.2rem 2.8rem 2.5rem;
+  background-color: #0A0A0A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--bw-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  #hero.editorial-slide {
+    padding: 2rem 1.8rem 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #hero.editorial-slide {
+    padding: 1.5rem 1.2rem 1.8rem;
+    min-height: 100vh;
+  }
+}
+
+/* White Name Block (Top Left) */
+.hero-brand-card {
+  font-family: var(--font-outfit);
+  letter-spacing: 0.18em;
+  font-weight: 800;
+  color: #000000;
+  background-color: #FFFFFF;
+  display: inline-block;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-brand-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Minimalist Dual-Bar Hamburger (Top Right) */
+.hero-menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-menu-btn span {
+  display: block;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+  transform-origin: right center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-menu-btn:hover span:first-child {
+  width: 2.4rem;
+}
+
+.hero-menu-btn:hover span:last-child {
+  width: 1.6rem;
+}
+
+/* Hero Typography: "My" + Pill + "Portfolio" */
+.hero-font-heading {
+  font-family: var(--font-outfit);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+.hero-pill-capsule {
+  border: 2.5px solid #FFFFFF;
+  border-radius: 9999px;
+  background-color: transparent;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-pill-capsule:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 0 28px rgba(255, 255, 255, 0.35);
+}
+
+/* Right Photograph Card */
+.hero-visual-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+  .hero-visual-card {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Sticky Header Scroll Controller */
+header.sticky-header {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
+}
+
+header.sticky-header.scrolled {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.presentation-mode header.sticky-header {
+  display: none !important;
+}
+
+/* Slide 9: Canva Outro Thank You */
+#thankyou.editorial-slide {
+  min-height: 100vh;
+  padding: 3rem 2.8rem 2.5rem;
+  background-color: #0A0A0A;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1.5px solid var(--bw-border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  #thankyou.editorial-slide {
+    padding: 2.2rem 1.8rem 2.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  #thankyou.editorial-slide {
+    padding: 1.8rem 1.2rem 1.8rem;
+    min-height: 100vh;
+  }
+}
+
+/* Fullscreen Editorial Navigation Drawer */
+#editorial-nav-drawer {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.98);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#editorial-nav-drawer.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.drawer-nav-item {
+  position: relative;
+  text-decoration: none;
+}
+
+.drawer-nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #FFFFFF;
+  transition: width 0.3s ease;
+}
+
+.drawer-nav-item:hover::before {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Slide Presentation Mode
+   -------------------------------------------------------------------------- */
+body.presentation-mode {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.presentation-mode .editorial-slide {
+  display: none;
+  height: 100vh;
+  min-height: 100vh;
+  padding: 5rem 3rem;
+  overflow-y: auto;
+}
+
+body.presentation-mode .editorial-slide.active-slide {
+  display: flex;
+  animation: slideFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.slide-deck-controller {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #121214;
+  border: 1.5px solid var(--bw-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-medium);
+  backdrop-filter: blur(12px);
+}
+
+.deck-btn {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.deck-btn:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.deck-indicator {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding: 0 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Cards, Grid & Visual Elements
+   -------------------------------------------------------------------------- */
+.editorial-card {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--bw-border-light);
+  border-radius: var(--radius-card);
+  padding: 2.2rem;
+  transition: var(--transition-smooth);
+  position: relative;
+  color: var(--text-primary);
+}
+
+.editorial-card:hover {
+  border-color: var(--bw-border-strong);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.08);
+}
+
+.project-card {
+  background-color: var(--bg-surface);
+  border: 1.5px solid var(--bw-border-light);
+  border-radius: var(--radius-card-lg);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  border-color: var(--bw-border-strong);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(255, 255, 255, 0.1);
+}
+
+.project-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.05);
+}
+
+/* Tool Pill Badges */
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--bw-border-light);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: var(--transition-smooth);
+}
+
+.tool-chip:hover {
+  border-color: var(--bw-border-strong);
+  background-color: #27272A;
+  transform: translateY(-2px);
+}
+
+/* Modal Popup */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background-color: #0A0A0C;
+  border: 2px solid var(--bw-border);
+  border-radius: var(--radius-card-lg);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.9);
+  transform: scale(0.95) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  color: #FFFFFF;
+}
+
+.modal-backdrop.active .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #FFFFFF;
+  color: #000000;
+  padding: 0.8rem 1.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.toast-notice.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525B;
+}
