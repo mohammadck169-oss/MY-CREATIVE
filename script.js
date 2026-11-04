@@ -102,6 +102,26 @@ document.addEventListener('DOMContentLoaded', () => {
   if (deckPrevBtn) deckPrevBtn.addEventListener('click', prevSlide);
   if (deckExitBtn) deckExitBtn.addEventListener('click', () => setDeckMode(false));
 
+  const heroQuickDeckBtn = document.getElementById('hero-quick-deck-btn');
+  if (heroQuickDeckBtn) {
+    heroQuickDeckBtn.addEventListener('click', () => {
+      setDeckMode(!isDeckMode);
+    });
+  }
+
+  // Hero Directory Links - Smooth Navigation & Deck Mode Support
+  document.querySelectorAll('.hero-dir-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      if (isDeckMode) {
+        e.preventDefault();
+        const targetIndex = parseInt(link.getAttribute('data-target-slide'), 10);
+        if (!isNaN(targetIndex)) {
+          showSlide(targetIndex);
+        }
+      }
+    });
+  });
+
   // Keyboard Navigation for Deck Mode
   document.addEventListener('keydown', (e) => {
     if (isDeckMode) {
