@@ -56,6 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (idx === currentSlideIndex) {
         slide.classList.add('active-slide');
         slide.scrollTop = 0;
+
+        // Trigger heading kinetic animation in the newly active slide
+        const h = slide.querySelector('.slide-heading, .outro-heading, .hero-font-heading');
+        if (h) {
+          h.classList.remove('heading-revealed');
+          void h.offsetWidth; // Force DOM reflow
+          h.classList.add('heading-revealed');
+        }
       } else {
         slide.classList.remove('active-slide');
       }
@@ -487,4 +495,41 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.classList.remove('show');
     }, 3200);
   }
+
+  // =========================================================================
+  // MAIN HEADINGS SCROLL REVEAL ANIMATIONS
+  // =========================================================================
+  function initHeadingAnimations() {
+    const slideHeadings = document.querySelectorAll('.slide-heading');
+    const outroHeading = document.querySelector('.outro-heading');
+
+    // Prepare slide headings for dynamic reveal
+    slideHeadings.forEach(h => {
+      h.classList.add('heading-ready');
+    });
+
+    if (outroHeading) {
+      outroHeading.classList.add('heading-ready');
+    }
+
+    // IntersectionObserver to reveal headings when scrolling into view
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.15
+    };
+
+    const headingObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('heading-revealed');
+        }
+      });
+    }, observerOptions);
+
+    slideHeadings.forEach(h => headingObserver.observe(h));
+    if (outroHeading) headingObserver.observe(outroHeading);
+  }
+
+  initHeadingAnimations();
 });
