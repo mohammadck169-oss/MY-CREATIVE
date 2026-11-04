@@ -102,23 +102,96 @@ document.addEventListener('DOMContentLoaded', () => {
   if (deckPrevBtn) deckPrevBtn.addEventListener('click', prevSlide);
   if (deckExitBtn) deckExitBtn.addEventListener('click', () => setDeckMode(false));
 
-  const heroQuickDeckBtn = document.getElementById('hero-quick-deck-btn');
-  if (heroQuickDeckBtn) {
-    heroQuickDeckBtn.addEventListener('click', () => {
-      setDeckMode(!isDeckMode);
-    });
+  // =========================================================================
+  // INTERACTIVE HANGING PULL-ROPES ("KAYAR") LOGIC
+  // =========================================================================
+  function playRopeClickSound() {
+    try {
+      const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(320, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(80, audioCtx.currentTime + 0.08);
+      gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.09);
+    } catch (e) {}
   }
 
-  // Hero Directory Links - Smooth Navigation & Deck Mode Support
-  document.querySelectorAll('.hero-dir-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if (isDeckMode) {
-        e.preventDefault();
-        const targetIndex = parseInt(link.getAttribute('data-target-slide'), 10);
-        if (!isNaN(targetIndex)) {
-          showSlide(targetIndex);
-        }
+  const ropeColumns = document.querySelectorAll('.rope-column');
+  ropeColumns.forEach(column => {
+    const wrap = column.querySelector('.rope-line-wrap');
+    const targetId = column.getAttribute('data-target-id');
+    const targetSlide = parseInt(column.getAttribute('data-target-slide'), 10);
+
+    let isPulling = false;
+    let startY = 0;
+    let hasTriggered = false;
+
+    function triggerPull() {
+      if (hasTriggered) return;
+      hasTriggered = true;
+
+      // Play soft tactile click sound
+      playRopeClickSound();
+
+      // Trigger stretch animation
+      if (wrap) {
+        wrap.classList.add('pulling');
+
+        setTimeout(() => {
+          // Snap back recoil bounce
+          wrap.classList.remove('pulling');
+          wrap.classList.add('recoiling');
+
+          // Navigate to target slide
+          setTimeout(() => {
+            if (isDeckMode && !isNaN(targetSlide)) {
+              showSlide(targetSlide);
+            } else if (targetId) {
+              const el = document.getElementById(targetId);
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              }
+            }
+          }, 220);
+
+          // Reset animation state
+          setTimeout(() => {
+            wrap.classList.remove('recoiling');
+            hasTriggered = false;
+          }, 700);
+        }, 160);
       }
+    }
+
+    // Click trigger
+    column.addEventListener('click', (e) => {
+      e.preventDefault();
+      triggerPull();
+    });
+
+    // Touch / Drag down gesture
+    column.addEventListener('pointerdown', (e) => {
+      isPulling = true;
+      startY = e.clientY;
+    });
+
+    window.addEventListener('pointermove', (e) => {
+      if (!isPulling) return;
+      const diffY = e.clientY - startY;
+      if (diffY > 24) {
+        isPulling = false;
+        triggerPull();
+      }
+    });
+
+    window.addEventListener('pointerup', () => {
+      isPulling = false;
     });
   });
 

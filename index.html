@@ -190,75 +190,179 @@
         </div>
       </div>
 
-      <!-- Right: Minimalist Typographic Directory (Numbers & Text Only - No Frame) -->
-      <div class="hero-index-clean w-full lg:w-[44%] xl:w-[40%] max-w-[460px] z-20">
-        <nav class="space-y-3 sm:space-y-4 font-sans">
+      <!-- Right: Interactive Hanging Pull-Ropes ("Kayar") Navigation -->
+      <div id="hero-pull-ropes" class="hero-ropes-wrapper w-full lg:w-auto lg:absolute lg:top-0 lg:right-6 xl:right-14 z-20 pt-6 lg:pt-0">
+        
+        <!-- Prompt Header -->
+        <div class="hidden lg:flex items-center justify-end gap-2 text-[10px] font-mono tracking-widest text-zinc-400 uppercase pb-2 pr-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span>
+          <span>PULL ROPE TO NAVIGATE &darr;</span>
+        </div>
+
+        <!-- 8 Hanging Ropes Container -->
+        <div class="flex items-start gap-3 sm:gap-4 lg:gap-3.5 xl:gap-4.5 overflow-x-auto lg:overflow-visible pb-4 lg:pb-0 px-2 select-none">
           
-          <a href="#about" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="1">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">01</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">WHO I AM</span>
+          <!-- Rope 01: WHO I AM -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="about" data-target-slide="1" title="Pull rope to visit 'Who I Am'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[130px] sm:h-[150px] lg:h-[160px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">01</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">WHO I AM</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">ABOUT ME</span>
-          </a>
+          </div>
 
-          <a href="#approach" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="2">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">02</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">APPROACH</span>
+          <!-- Rope 02: APPROACH -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="approach" data-target-slide="2" title="Pull rope to visit 'Approach'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[165px] sm:h-[185px] lg:h-[205px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">02</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">APPROACH</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">METHOD</span>
-          </a>
+          </div>
 
-          <a href="#services" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="3">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">03</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">WHAT I CREATE</span>
+          <!-- Rope 03: WHAT I CREATE -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="services" data-target-slide="3" title="Pull rope to visit 'Services'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[200px] sm:h-[225px] lg:h-[250px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">03</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">SERVICES</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">SERVICES</span>
-          </a>
+          </div>
 
-          <a href="#toolkit" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="4">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">04</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">TECH STACK</span>
+          <!-- Rope 04: TECH STACK -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="toolkit" data-target-slide="4" title="Pull rope to visit 'Toolkit'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[235px] sm:h-[265px] lg:h-[295px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">04</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">TOOLKIT</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">AI PIPELINE</span>
-          </a>
+          </div>
 
-          <a href="#projects" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="5">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">05</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">PROJECTS</span>
+          <!-- Rope 05: PROJECTS -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="projects" data-target-slide="5" title="Pull rope to visit 'Projects'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[270px] sm:h-[305px] lg:h-[340px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">05</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">PROJECTS</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">CASE STUDIES</span>
-          </a>
+          </div>
 
-          <a href="#reviews" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="6">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">06</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">REVIEWS</span>
+          <!-- Rope 06: REVIEWS -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="reviews" data-target-slide="6" title="Pull rope to visit 'Reviews'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[305px] sm:h-[345px] lg:h-[385px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">06</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">REVIEWS</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">FEEDBACK</span>
-          </a>
+          </div>
 
-          <a href="#contact" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="7">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">07</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">LET'S CONNECT</span>
+          <!-- Rope 07: LET'S CONNECT -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="contact" data-target-slide="7" title="Pull rope to visit 'Contact'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[340px] sm:h-[385px] lg:h-[430px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">07</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">CONTACT</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">INQUIRY</span>
-          </a>
+          </div>
 
-          <a href="#thankyou" class="hero-dir-link hero-clean-nav-item group flex items-baseline justify-between py-1 transition-all" data-target-slide="8">
-            <div class="flex items-baseline gap-4 sm:gap-6">
-              <span class="font-mono text-xs sm:text-sm text-zinc-500 group-hover:text-white transition-colors">08</span>
-              <span class="font-bold text-sm sm:text-base lg:text-lg tracking-wider text-white/90 group-hover:text-white group-hover:translate-x-2 transition-transform">OUTRO</span>
+          <!-- Rope 08: OUTRO -->
+          <div class="rope-column group flex flex-col items-center cursor-pointer shrink-0" data-target-id="thankyou" data-target-slide="8" title="Pull rope to visit 'Thank You'">
+            <div class="rope-ceiling-hook w-3 h-3 rounded-full border-2 border-zinc-400 bg-black shadow-md shrink-0"></div>
+            <div class="rope-line-wrap flex flex-col items-center">
+              <div class="rope-strand h-[375px] sm:h-[425px] lg:h-[475px]"></div>
+              <div class="rope-pull-knob flex flex-col items-center">
+                <div class="w-3.5 h-3.5 rounded-full border-2 border-amber-300/80 bg-zinc-900 shadow-sm -mt-0.5"></div>
+                <div class="w-5 h-8 rounded-full bg-gradient-to-b from-amber-200 via-amber-600 to-amber-900 border border-amber-300/60 shadow-[0_4px_15px_rgba(0,0,0,0.8)] my-1 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div class="w-1 h-3 rounded-full bg-black/40"></div>
+                </div>
+                <div class="w-4 h-5 rounded-b-full border-2 border-zinc-300 border-t-0 -mt-1 group-hover:border-white transition-colors"></div>
+                <div class="rope-label-badge mt-2 px-2.5 py-1.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/20 text-center whitespace-nowrap shadow-lg">
+                  <div class="font-mono text-[10px] text-zinc-400 font-bold">08</div>
+                  <div class="font-bold text-[11px] sm:text-xs text-white uppercase tracking-wider">OUTRO</div>
+                  <div class="text-[9px] font-mono text-emerald-400 tracking-widest mt-0.5 font-semibold">PULL &darr;</div>
+                </div>
+              </div>
             </div>
-            <span class="font-mono text-[11px] sm:text-xs text-zinc-600 group-hover:text-zinc-400 uppercase tracking-widest transition-colors">THANK YOU</span>
-          </a>
+          </div>
 
-        </nav>
+        </div>
       </div>
 
     </div>
