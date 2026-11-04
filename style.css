@@ -447,23 +447,23 @@ body {
 }
 
 /* ==========================================================================
-   INTERACTIVE HANGING PULL-ROPES ("KAYAR") NAVIGATION SYSTEM
+   INTERACTIVE HANGING PULL-ROPES ("KAYAR") NAVIGATION SYSTEM (COMPACT & REFINED)
    ========================================================================== */
 
-/* Realistic Coir / Braided Rope Texture */
+/* Realistic Coir / Braided Rope Texture (Slim & Refined) */
 .rope-strand {
-  width: 5px;
+  width: 3px;
   background: repeating-linear-gradient(
     -45deg,
     #E8C39E 0px,
-    #C49A6C 3px,
-    #9A7046 5px,
-    #694420 8px
+    #C49A6C 2px,
+    #9A7046 3.5px,
+    #694420 5.5px
   );
   box-shadow: 
-    0 0 6px rgba(0, 0, 0, 0.9),
-    inset 0 0 2px rgba(255, 255, 255, 0.35);
-  border-radius: 3px;
+    0 0 3px rgba(0, 0, 0, 0.9),
+    inset 0 0 1px rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
   transform-origin: top center;
   transition: height 0.3s ease;
 }
@@ -473,6 +473,7 @@ body {
   touch-action: pan-y;
   user-select: none;
   cursor: pointer;
+  padding: 0 1px;
 }
 
 /* Natural idle pendulum sway */
@@ -481,10 +482,10 @@ body {
     transform: rotate(0deg);
   }
   30% {
-    transform: rotate(1deg);
+    transform: rotate(0.6deg);
   }
   70% {
-    transform: rotate(-1deg);
+    transform: rotate(-0.6deg);
   }
 }
 
@@ -495,37 +496,37 @@ body {
 }
 
 .rope-column:nth-child(1) .rope-line-wrap { animation-delay: 0s; }
-.rope-column:nth-child(2) .rope-line-wrap { animation-delay: 0.7s; }
-.rope-column:nth-child(3) .rope-line-wrap { animation-delay: 1.4s; }
-.rope-column:nth-child(4) .rope-line-wrap { animation-delay: 2.1s; }
-.rope-column:nth-child(5) .rope-line-wrap { animation-delay: 2.8s; }
-.rope-column:nth-child(6) .rope-line-wrap { animation-delay: 3.5s; }
-.rope-column:nth-child(7) .rope-line-wrap { animation-delay: 4.2s; }
-.rope-column:nth-child(8) .rope-line-wrap { animation-delay: 4.9s; }
+.rope-column:nth-child(2) .rope-line-wrap { animation-delay: 0.5s; }
+.rope-column:nth-child(3) .rope-line-wrap { animation-delay: 1.0s; }
+.rope-column:nth-child(4) .rope-line-wrap { animation-delay: 1.5s; }
+.rope-column:nth-child(5) .rope-line-wrap { animation-delay: 2.0s; }
+.rope-column:nth-child(6) .rope-line-wrap { animation-delay: 2.5s; }
+.rope-column:nth-child(7) .rope-line-wrap { animation-delay: 3.0s; }
+.rope-column:nth-child(8) .rope-line-wrap { animation-delay: 3.5s; }
 
-/* When being pulled down */
+/* When being pulled down (Scaled for compact size) */
 .rope-line-wrap.pulling {
   animation: none !important;
-  transform: translateY(36px) scaleY(1.08) !important;
+  transform: translateY(18px) scaleY(1.05) !important;
   transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Elastic snap bounce recoil animation upon release */
 @keyframes ropeSnapRecoil {
   0% {
-    transform: translateY(36px) scaleY(1.08);
+    transform: translateY(18px) scaleY(1.05);
   }
   30% {
-    transform: translateY(-16px) scaleY(0.92);
+    transform: translateY(-8px) scaleY(0.96);
   }
   55% {
-    transform: translateY(8px) scaleY(1.03);
+    transform: translateY(4px) scaleY(1.02);
   }
   75% {
-    transform: translateY(-4px) scaleY(0.98);
+    transform: translateY(-2px) scaleY(0.99);
   }
   90% {
-    transform: translateY(2px) scaleY(1.01);
+    transform: translateY(1px) scaleY(1.005);
   }
   100% {
     transform: translateY(0px) scaleY(1);
@@ -533,20 +534,20 @@ body {
 }
 
 .rope-line-wrap.recoiling {
-  animation: ropeSnapRecoil 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.3) forwards !important;
+  animation: ropeSnapRecoil 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.3) forwards !important;
 }
 
-/* Tag & Handle Styling */
+/* Tag & Handle Styling (Refined Minimalist Pill) */
 .rope-label-badge {
   transform: translateY(0);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .rope-column:hover .rope-label-badge {
-  transform: translateY(4px) scale(1.05);
+  transform: translateY(2px) scale(1.04);
   background-color: #FFFFFF;
   color: #000000;
-  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
 }
 
 .rope-column:hover .rope-label-badge * {
