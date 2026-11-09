@@ -446,114 +446,6 @@ body {
   box-shadow: 0 0 28px rgba(255, 255, 255, 0.35);
 }
 
-/* ==========================================================================
-   INTERACTIVE HANGING PULL-ROPES ("KAYAR") NAVIGATION SYSTEM (COMPACT & REFINED)
-   ========================================================================== */
-
-/* Realistic Coir / Braided Rope Texture (Slim & Refined) */
-.rope-strand {
-  width: 3px;
-  background: repeating-linear-gradient(
-    -45deg,
-    #E8C39E 0px,
-    #C49A6C 2px,
-    #9A7046 3.5px,
-    #694420 5.5px
-  );
-  box-shadow: 
-    0 0 3px rgba(0, 0, 0, 0.9),
-    inset 0 0 1px rgba(255, 255, 255, 0.35);
-  border-radius: 2px;
-  transform-origin: top center;
-  transition: height 0.3s ease;
-}
-
-.rope-column {
-  position: relative;
-  touch-action: pan-y;
-  user-select: none;
-  cursor: pointer;
-  padding: 0 1px;
-}
-
-/* Natural idle pendulum sway */
-@keyframes ropeGentleSway {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  30% {
-    transform: rotate(0.6deg);
-  }
-  70% {
-    transform: rotate(-0.6deg);
-  }
-}
-
-.rope-line-wrap {
-  transform-origin: top center;
-  animation: ropeGentleSway 6s ease-in-out infinite;
-  will-change: transform;
-}
-
-.rope-column:nth-child(1) .rope-line-wrap { animation-delay: 0s; }
-.rope-column:nth-child(2) .rope-line-wrap { animation-delay: 0.5s; }
-.rope-column:nth-child(3) .rope-line-wrap { animation-delay: 1.0s; }
-.rope-column:nth-child(4) .rope-line-wrap { animation-delay: 1.5s; }
-.rope-column:nth-child(5) .rope-line-wrap { animation-delay: 2.0s; }
-.rope-column:nth-child(6) .rope-line-wrap { animation-delay: 2.5s; }
-.rope-column:nth-child(7) .rope-line-wrap { animation-delay: 3.0s; }
-.rope-column:nth-child(8) .rope-line-wrap { animation-delay: 3.5s; }
-
-/* When being pulled down (Scaled for compact size) */
-.rope-line-wrap.pulling {
-  animation: none !important;
-  transform: translateY(18px) scaleY(1.05) !important;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Elastic snap bounce recoil animation upon release */
-@keyframes ropeSnapRecoil {
-  0% {
-    transform: translateY(18px) scaleY(1.05);
-  }
-  30% {
-    transform: translateY(-8px) scaleY(0.96);
-  }
-  55% {
-    transform: translateY(4px) scaleY(1.02);
-  }
-  75% {
-    transform: translateY(-2px) scaleY(0.99);
-  }
-  90% {
-    transform: translateY(1px) scaleY(1.005);
-  }
-  100% {
-    transform: translateY(0px) scaleY(1);
-  }
-}
-
-.rope-line-wrap.recoiling {
-  animation: ropeSnapRecoil 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.3) forwards !important;
-}
-
-/* Tag & Handle Styling (Refined Minimalist Pill) */
-.rope-label-badge {
-  transform: translateY(0);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.rope-column:hover .rope-label-badge {
-  transform: translateY(2px) scale(1.04);
-  background-color: #FFFFFF;
-  color: #000000;
-  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.25);
-}
-
-.rope-column:hover .rope-label-badge * {
-  color: #000000 !important;
-}
-
 /* Right Photograph Card */
 .hero-visual-card {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -811,14 +703,256 @@ body.presentation-mode .editorial-slide.active-slide {
   background-color: #000000;
 }
 
-.project-thumb img {
+.project-thumb img,
+.project-thumb video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-card:hover .project-thumb img {
+.project-card:hover .project-thumb img,
+.project-card:hover .project-thumb video {
+  transform: scale(1.04);
+}
+
+/* ==========================================================================
+   4 PROJECT VIDEO ROLLING SHUTTER DOORS (INDEPENDENT VAULT SHUTTERS)
+   ========================================================================== */
+.project-shutter-door {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  pointer-events: auto;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+/* Realistic Metal Shutter Curtain with Horizontal Slats */
+.shutter-curtain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 6%, transparent 94%, rgba(0,0,0,0.65) 100%),
+    repeating-linear-gradient(
+      to bottom,
+      #2B2B33 0px,
+      #202026 3px,
+      #161619 14px,
+      #0E0E11 15px,
+      #383842 16px
+    );
+  border-left: 6px solid #282830;
+  border-right: 6px solid #282830;
+  box-shadow: inset 0 10px 25px rgba(0, 0, 0, 0.85), inset 0 -10px 25px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.65rem;
+  transition: filter 0.3s ease;
+}
+
+/* Metallic diagonal sheen over slats */
+.shutter-curtain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 25%,
+    rgba(255, 255, 255, 0.08) 45%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.project-shutter-door:hover .shutter-curtain {
+  filter: brightness(1.08);
+}
+
+/* Top Vault Designation Label */
+.shutter-vault-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.vault-code {
+  font-family: var(--font-outfit), monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #A1A1AA;
+  text-transform: uppercase;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vault-title {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+}
+
+/* Center Lock & Handle Unit */
+.shutter-center-lock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin: auto 0;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-shutter-door:hover .shutter-center-lock {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.shutter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  border-radius: 9999px;
+  background-color: rgba(12, 12, 15, 0.92);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.22);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.status-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #F59E0B;
+  box-shadow: 0 0 10px #F59E0B;
+  animation: pulse 1.6s infinite;
+}
+
+/* Realistic Heavy-Duty Steel Handle */
+.shutter-handle {
+  width: 115px;
+  height: 15px;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom, #52525B, #27272A 60%, #18181B);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handle-grip {
+  width: 48px;
+  height: 6px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(to right, #71717A 0px, #71717A 2px, #3F3F46 3px, #3F3F46 4px);
+}
+
+.shutter-hint {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #E4E4E7;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+}
+
+/* Bottom Industrial Bumper Bar */
+.shutter-bumper-bar {
+  width: 100%;
+  height: 12px;
+  background-color: #18181B;
+  border-top: 2px solid #3F3F46;
+  border-bottom: 2px solid #09090B;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.bumper-stripes {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #F59E0B 0px,
+    #F59E0B 8px,
+    #18181B 8px,
+    #18181B 16px
+  );
+  opacity: 0.45;
+}
+
+/* Open State of the Shutter Door (Smoothly Rolled Up) */
+.project-shutter-door.door-opened {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+/* Floating Close Shutter Button (only visible when door is opened) */
+.door-close-btn {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-8px);
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: 9999px;
+  background-color: rgba(10, 10, 12, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65);
+}
+
+.project-thumb.shutter-is-open .door-close-btn {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.door-close-btn:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  border-color: #FFFFFF;
   transform: scale(1.05);
 }
 
