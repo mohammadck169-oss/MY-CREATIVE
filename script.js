@@ -554,7 +554,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function initHeadingAnimations() {
     const slideHeadings = document.querySelectorAll('.slide-heading');
     const outroHeading = document.querySelector('.outro-heading');
-    const outroFrame = document.querySelector('.outro-photo-frame');
 
     // Prepare slide headings for dynamic reveal
     slideHeadings.forEach(h => {
@@ -563,9 +562,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (outroHeading) {
       outroHeading.classList.add('heading-ready');
-    }
-    if (outroFrame) {
-      outroFrame.classList.add('frame-ready');
     }
 
     // IntersectionObserver to reveal headings when scrolling into view
@@ -579,14 +575,12 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('heading-revealed');
-          entry.target.classList.add('frame-revealed');
         }
       });
     }, observerOptions);
 
     slideHeadings.forEach(h => headingObserver.observe(h));
     if (outroHeading) headingObserver.observe(outroHeading);
-    if (outroFrame) headingObserver.observe(outroFrame);
   }
 
   initHeadingAnimations();
