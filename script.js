@@ -312,9 +312,10 @@ document.addEventListener('DOMContentLoaded', () => {
       pipeline: '1. Scripting comedic beat points with ChatGPT. 2. Text-to-image concept generation for character consistency. 3. Image-to-video motion prompting in Kling with camera orbit and speed parameters. 4. Multi-track Foley audio and soundtrack synchronization in CapCut.'
     },
     'shareef-work': {
-      title: 'DALLA & LUQMA â€” Commercial Brand Campaign',
+      title: 'DALLA & LUQMA — Commercial Brand Campaign',
       category: 'BRAND CAMPAIGN & ADS',
       image: 'assets/projects/shareef-work.svg',
+      video: 'assets/projects/dalla-luqma.mp4',
       tools: 'CapCut, Lightroom, Meta Ads Manager, Canva',
       role: 'Commercial Editor, Meta Ads Strategist',
       impact: '5.8x ROAS â€¢ +340% Reach',
