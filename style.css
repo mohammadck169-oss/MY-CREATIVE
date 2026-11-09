@@ -727,7 +727,9 @@ body.presentation-mode .editorial-slide.active-slide {
   user-select: none;
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  perspective: 1000px;
+  transform-origin: top center;
+  transition: transform 0.95s cubic-bezier(0.19, 1, 0.22, 1), filter 0.45s ease, box-shadow 0.4s ease;
   will-change: transform;
 }
 
@@ -932,10 +934,114 @@ body.presentation-mode .editorial-slide.active-slide {
   opacity: 0.85;
 }
 
-/* Open State of the Shutter Door (Smoothly Rolled Up) */
+/* Open State of the Shutter Door (Smoothly Rolled Up with 3D Spool Physics) */
 .project-shutter-door.door-opened {
-  transform: translateY(-100%);
+  transform: translateY(-103%) rotateX(14deg) scale(0.985);
+  filter: brightness(1.18);
   pointer-events: none;
+}
+
+/* Unlocked Badge State (Flash Emerald/Brilliant Gold) */
+.shutter-badge.badge-unlocked {
+  border-color: #34D399;
+  background: radial-gradient(circle at 50% 0%, #064E3B 0%, #062319 100%);
+  color: #A7F3D0;
+  box-shadow: 0 0 25px rgba(52, 211, 153, 0.6), inset 0 1px 2px rgba(167, 243, 208, 0.8);
+}
+
+.shutter-badge.badge-unlocked .status-pulse-dot {
+  background-color: #10B981;
+  box-shadow: 0 0 12px #34D399, 0 0 24px #6EE7B7;
+}
+
+/* Golden Radial Unlock Shockwave */
+.shutter-unlock-burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 230, 120, 0.95) 25%, rgba(212, 175, 55, 0.7) 50%, transparent 75%);
+  transform: translate(-50%, -50%) scale(0);
+  pointer-events: none;
+  z-index: 28;
+  mix-blend-mode: screen;
+}
+
+.shutter-unlock-burst.burst-active {
+  animation: goldShockwave 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes goldShockwave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 1;
+    filter: drop-shadow(0 0 30px rgba(255, 240, 160, 1));
+  }
+  30% {
+    opacity: 1;
+    filter: drop-shadow(0 0 60px rgba(212, 175, 55, 0.9));
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(38);
+    opacity: 0;
+    filter: drop-shadow(0 0 0px transparent);
+  }
+}
+
+/* Golden Laser Sweep Scanline across Video */
+.shutter-reveal-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, #D4AF37 20%, #FFFDF0 50%, #D4AF37 80%, transparent 100%);
+  box-shadow: 0 0 25px 5px #FFE57F, 0 0 50px 10px rgba(212, 175, 55, 0.6);
+  z-index: 22;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.shutter-reveal-beam.beam-active {
+  animation: laserSweepDown 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes laserSweepDown {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.9;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* Cinematic Video Reveal Zoom and Bloom */
+.project-thumb video,
+.project-thumb > img {
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.project-thumb.shutter-is-open video,
+.project-thumb.shutter-is-open > img {
+  animation: cinemaReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cinemaReveal {
+  0% {
+    transform: scale(1.06);
+    filter: brightness(1.25) contrast(1.08);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1) contrast(1);
+  }
 }
 
 /* Floating Close Shutter Button (Luxury Gold Pill) */
