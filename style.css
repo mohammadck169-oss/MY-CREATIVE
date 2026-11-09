@@ -690,9 +690,9 @@ body.presentation-mode .editorial-slide.active-slide {
 }
 
 .project-card:hover {
-  border-color: var(--bw-border-strong);
+  border-color: rgba(212, 175, 55, 0.45);
   transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(212, 175, 55, 0.15);
 }
 
 .project-thumb {
@@ -717,7 +717,7 @@ body.presentation-mode .editorial-slide.active-slide {
 }
 
 /* ==========================================================================
-   4 PROJECT VIDEO ROLLING SHUTTER DOORS (INDEPENDENT VAULT SHUTTERS)
+   4 PROJECT VIDEO ROLLING SHUTTER DOORS (24K GOLD & OBSIDIAN LUXURY VAULT)
    ========================================================================== */
 .project-shutter-door {
   position: absolute;
@@ -731,32 +731,36 @@ body.presentation-mode .editorial-slide.active-slide {
   will-change: transform;
 }
 
-/* Realistic Metal Shutter Curtain with Horizontal Slats */
+/* Luxurious Gold & Obsidian Shutter Curtain with Metallic Slats */
 .shutter-curtain {
   position: relative;
   width: 100%;
   height: 100%;
   background: 
-    linear-gradient(90deg, rgba(0,0,0,0.65) 0%, transparent 6%, transparent 94%, rgba(0,0,0,0.65) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(212,175,55,0.06) 10%, rgba(255,243,176,0.12) 50%, rgba(212,175,55,0.06) 90%, rgba(0,0,0,0.7) 100%),
     repeating-linear-gradient(
       to bottom,
-      #2B2B33 0px,
-      #202026 3px,
-      #161619 14px,
-      #0E0E11 15px,
-      #383842 16px
+      #352B18 0px,
+      #4A3D22 2px,
+      #231D10 12px,
+      #131008 13px,
+      #5C4A27 14px,
+      #18140B 15px
     );
-  border-left: 6px solid #282830;
-  border-right: 6px solid #282830;
-  box-shadow: inset 0 10px 25px rgba(0, 0, 0, 0.85), inset 0 -10px 25px rgba(0, 0, 0, 0.85);
+  border-left: 6px solid #8C7034;
+  border-right: 6px solid #8C7034;
+  box-shadow: 
+    inset 0 10px 25px rgba(0, 0, 0, 0.9), 
+    inset 0 -10px 25px rgba(0, 0, 0, 0.9),
+    inset 0 0 25px rgba(212, 175, 55, 0.15);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem 1.25rem 0.65rem;
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, border-color 0.3s ease;
 }
 
-/* Metallic diagonal sheen over slats */
+/* Radiant 24K Gold diagonal light sheen animation */
 .shutter-curtain::before {
   content: '';
   position: absolute;
@@ -764,18 +768,27 @@ body.presentation-mode .editorial-slide.active-slide {
   background: linear-gradient(
     120deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.03) 25%,
-    rgba(255, 255, 255, 0.08) 45%,
-    transparent 65%
+    rgba(212, 175, 55, 0.04) 20%,
+    rgba(255, 243, 176, 0.15) 45%,
+    rgba(212, 175, 55, 0.06) 55%,
+    transparent 70%
   );
   pointer-events: none;
+  background-size: 200% 200%;
+  transition: opacity 0.4s ease;
 }
 
 .project-shutter-door:hover .shutter-curtain {
-  filter: brightness(1.08);
+  filter: brightness(1.15) contrast(1.05);
+  border-left-color: #D4AF37;
+  border-right-color: #D4AF37;
+  box-shadow: 
+    inset 0 10px 25px rgba(0, 0, 0, 0.9), 
+    inset 0 -10px 25px rgba(0, 0, 0, 0.9),
+    inset 0 0 35px rgba(212, 175, 55, 0.3);
 }
 
-/* Top Vault Designation Label */
+/* Top Vault Designation Label (Luxury Gold Foil) */
 .shutter-vault-label {
   display: flex;
   align-items: center;
@@ -788,23 +801,24 @@ body.presentation-mode .editorial-slide.active-slide {
   font-family: var(--font-outfit), monospace;
   font-size: 0.68rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
-  color: #A1A1AA;
+  letter-spacing: 0.18em;
+  color: #FFE57F;
   text-transform: uppercase;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 0.2rem 0.6rem;
+  background-color: rgba(18, 15, 8, 0.88);
+  padding: 0.25rem 0.65rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6), 0 0 12px rgba(212, 175, 55, 0.2);
 }
 
 .vault-title {
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #FFFFFF;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #FFFDF0;
   text-transform: uppercase;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(212, 175, 55, 0.35);
 }
 
 /* Center Lock & Handle Unit */
@@ -812,7 +826,7 @@ body.presentation-mode .editorial-slide.active-slide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   margin: auto 0;
   position: relative;
   z-index: 2;
@@ -823,20 +837,24 @@ body.presentation-mode .editorial-slide.active-slide {
   transform: translateY(-3px) scale(1.02);
 }
 
+/* Luxury 24K Gold Embossed Badge */
 .shutter-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1.15rem;
+  gap: 0.55rem;
+  padding: 0.48rem 1.25rem;
   border-radius: 9999px;
-  background-color: rgba(12, 12, 15, 0.92);
-  border: 1.5px solid rgba(255, 255, 255, 0.28);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 16px rgba(245, 158, 11, 0.22);
-  color: #FFFFFF;
+  background: radial-gradient(circle at 50% 0%, #221C0E 0%, #0E0C06 100%);
+  border: 1.5px solid #D4AF37;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.85), 
+    0 0 24px rgba(212, 175, 55, 0.35),
+    inset 0 1px 1px rgba(255, 243, 176, 0.5);
+  color: #FFF3B0;
   font-family: var(--font-sans);
   font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -844,19 +862,22 @@ body.presentation-mode .editorial-slide.active-slide {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
-  background-color: #F59E0B;
-  box-shadow: 0 0 10px #F59E0B;
+  background-color: #FBBF24;
+  box-shadow: 0 0 10px #F59E0B, 0 0 18px #FFE57F;
   animation: pulse 1.6s infinite;
 }
 
-/* Realistic Heavy-Duty Steel Handle */
+/* Solid Machined 24K Brushed Gold Handle */
 .shutter-handle {
-  width: 115px;
+  width: 120px;
   height: 15px;
   border-radius: 9999px;
-  background: linear-gradient(to bottom, #52525B, #27272A 60%, #18181B);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.85), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(to bottom, #FFF3B0, #D4AF37 35%, #997A2E 75%, #4A3A14);
+  border: 1px solid rgba(255, 243, 176, 0.65);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.9), 
+    0 0 22px rgba(212, 175, 55, 0.4), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.9);
   position: relative;
   display: flex;
   align-items: center;
@@ -864,10 +885,11 @@ body.presentation-mode .editorial-slide.active-slide {
 }
 
 .handle-grip {
-  width: 48px;
+  width: 50px;
   height: 6px;
   border-radius: 3px;
-  background: repeating-linear-gradient(to right, #71717A 0px, #71717A 2px, #3F3F46 3px, #3F3F46 4px);
+  background: repeating-linear-gradient(to right, #FFF3B0 0px, #D4AF37 2px, #8C7034 3px, #4A3B12 4px);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
 }
 
 .shutter-hint {
@@ -877,23 +899,24 @@ body.presentation-mode .editorial-slide.active-slide {
   font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #E4E4E7;
+  letter-spacing: 0.14em;
+  color: #FFE57F;
   text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.95), 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
-/* Bottom Industrial Bumper Bar */
+/* Bottom 24K Gold & Obsidian Luxury Hazard Bumper Bar */
 .shutter-bumper-bar {
   width: 100%;
   height: 12px;
-  background-color: #18181B;
-  border-top: 2px solid #3F3F46;
-  border-bottom: 2px solid #09090B;
+  background-color: #1A150B;
+  border-top: 2px solid #D4AF37;
+  border-bottom: 2px solid #3D321A;
   position: relative;
   overflow: hidden;
   border-radius: 2px;
   z-index: 2;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
 }
 
 .bumper-stripes {
@@ -901,12 +924,12 @@ body.presentation-mode .editorial-slide.active-slide {
   height: 100%;
   background: repeating-linear-gradient(
     -45deg,
-    #F59E0B 0px,
-    #F59E0B 8px,
-    #18181B 8px,
-    #18181B 16px
+    #D4AF37 0px,
+    #D4AF37 8px,
+    #18140B 8px,
+    #18140B 16px
   );
-  opacity: 0.45;
+  opacity: 0.85;
 }
 
 /* Open State of the Shutter Door (Smoothly Rolled Up) */
@@ -915,7 +938,7 @@ body.presentation-mode .editorial-slide.active-slide {
   pointer-events: none;
 }
 
-/* Floating Close Shutter Button (only visible when door is opened) */
+/* Floating Close Shutter Button (Luxury Gold Pill) */
 .door-close-btn {
   position: absolute;
   top: 0.85rem;
@@ -924,23 +947,23 @@ body.presentation-mode .editorial-slide.active-slide {
   opacity: 0;
   pointer-events: none;
   transform: translateY(-8px);
-  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+  transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  padding: 0.45rem 0.95rem;
+  padding: 0.45rem 1rem;
   border-radius: 9999px;
-  background-color: rgba(10, 10, 12, 0.85);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  background-color: rgba(14, 12, 7, 0.92);
+  border: 1.5px solid #D4AF37;
   backdrop-filter: blur(10px);
-  color: #FFFFFF;
+  color: #FFF3B0;
   font-family: var(--font-sans);
   font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.75), 0 0 15px rgba(212, 175, 55, 0.25);
 }
 
 .project-thumb.shutter-is-open .door-close-btn {
@@ -950,10 +973,11 @@ body.presentation-mode .editorial-slide.active-slide {
 }
 
 .door-close-btn:hover {
-  background-color: #FFFFFF;
+  background: linear-gradient(135deg, #FFF3B0 0%, #D4AF37 100%);
   color: #000000;
-  border-color: #FFFFFF;
+  border-color: #FFF3B0;
   transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
 }
 
 /* Tool Pill Badges */
