@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
       video: 'assets/projects/dalla-luqma.mp4',
       tools: 'CapCut, Lightroom, Meta Ads Manager, Canva',
       role: 'Commercial Editor, Meta Ads Strategist',
-      impact: '5.8x ROAS â€¢ +340% Reach',
+      impact: '5.8x ROAS • +340% Reach',
       desc: 'Comprehensive visual elevation for Dalla & Luqma. Crafted dynamic, high-engagement video creatives designed specifically for Instagram Reels and Facebook Ads with punchy 3-second visual hooks that stop user scrolling.',
       pipeline: '1. Brand identity analysis and audience demographic study. 2. Storyboarding commercial cuts and scripting call-to-actions. 3. Precise color grading in Adobe Lightroom. 4. Creative A/B testing on Meta Ads leading to a 5.8x Return on Ad Spend.'
     },
@@ -409,172 +409,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // =========================================================================
-  // VAULT MECHANICAL AUDIO SYNTHESIZER (Web Audio API)
-  // =========================================================================
-  const ShutterAudio = (function() {
-    let audioCtx = null;
-
-    function getContext() {
-      try {
-        if (!audioCtx) {
-          const AudioContext = window.AudioContext || window.webkitAudioContext;
-          if (AudioContext) audioCtx = new AudioContext();
-        }
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-        return audioCtx;
-      } catch(e) {
-        return null;
-      }
-    }
-
-    function playUnlock() {
-      try {
-        const ctx = getContext();
-        if (!ctx) return;
-        const now = ctx.currentTime;
-
-        // 1. High metallic mechanical ratchet click
-        const clickOsc = ctx.createOscillator();
-        const clickGain = ctx.createGain();
-        clickOsc.type = 'triangle';
-        clickOsc.frequency.setValueAtTime(1400, now);
-        clickOsc.frequency.exponentialRampToValueAtTime(180, now + 0.08);
-        clickGain.gain.setValueAtTime(0.25, now);
-        clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
-        clickOsc.connect(clickGain);
-        clickGain.connect(ctx.destination);
-        clickOsc.start(now);
-        clickOsc.stop(now + 0.08);
-
-        // 2. Heavy vault sub-latch thump
-        const subOsc = ctx.createOscillator();
-        const subGain = ctx.createGain();
-        subOsc.type = 'sine';
-        subOsc.frequency.setValueAtTime(240, now + 0.015);
-        subOsc.frequency.exponentialRampToValueAtTime(45, now + 0.12);
-        subGain.gain.setValueAtTime(0.3, now + 0.015);
-        subGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-        subOsc.connect(subGain);
-        subGain.connect(ctx.destination);
-        subOsc.start(now + 0.015);
-        subOsc.stop(now + 0.12);
-
-        // 3. Smooth rolling shutter spool friction whoosh
-        const bufferSize = Math.floor(ctx.sampleRate * 0.55);
-        const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 2 - 1;
-        }
-        const whiteNoise = ctx.createBufferSource();
-        whiteNoise.buffer = noiseBuffer;
-        const filter = ctx.createBiquadFilter();
-        filter.type = 'bandpass';
-        filter.frequency.setValueAtTime(450, now + 0.04);
-        filter.frequency.exponentialRampToValueAtTime(1850, now + 0.5);
-        filter.Q.value = 2.4;
-        const noiseGain = ctx.createGain();
-        noiseGain.gain.setValueAtTime(0.001, now);
-        noiseGain.gain.linearRampToValueAtTime(0.2, now + 0.1);
-        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.55);
-        whiteNoise.connect(filter);
-        filter.connect(noiseGain);
-        noiseGain.connect(ctx.destination);
-        whiteNoise.start(now + 0.04);
-        whiteNoise.stop(now + 0.55);
-      } catch(e) {}
-    }
-
-    function playClose() {
-      try {
-        const ctx = getContext();
-        if (!ctx) return;
-        const now = ctx.currentTime;
-
-        // Descent glide noise
-        const bufferSize = Math.floor(ctx.sampleRate * 0.42);
-        const noiseBuffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        const output = noiseBuffer.getChannelData(0);
-        for (let i = 0; i < bufferSize; i++) {
-          output[i] = Math.random() * 2 - 1;
-        }
-        const whiteNoise = ctx.createBufferSource();
-        whiteNoise.buffer = noiseBuffer;
-        const filter = ctx.createBiquadFilter();
-        filter.type = 'bandpass';
-        filter.frequency.setValueAtTime(1600, now);
-        filter.frequency.exponentialRampToValueAtTime(320, now + 0.38);
-        filter.Q.value = 2.0;
-        const noiseGain = ctx.createGain();
-        noiseGain.gain.setValueAtTime(0.18, now);
-        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
-        whiteNoise.connect(filter);
-        filter.connect(noiseGain);
-        noiseGain.connect(ctx.destination);
-        whiteNoise.start(now);
-        whiteNoise.stop(now + 0.38);
-
-        // Solid bottom latch impact
-        const impactTime = now + 0.35;
-        const impactOsc = ctx.createOscillator();
-        const impactGain = ctx.createGain();
-        impactOsc.type = 'triangle';
-        impactOsc.frequency.setValueAtTime(140, impactTime);
-        impactOsc.frequency.exponentialRampToValueAtTime(35, impactTime + 0.16);
-        impactGain.gain.setValueAtTime(0.35, impactTime);
-        impactGain.gain.exponentialRampToValueAtTime(0.001, impactTime + 0.16);
-        impactOsc.connect(impactGain);
-        impactGain.connect(ctx.destination);
-        impactOsc.start(impactTime);
-        impactOsc.stop(impactTime + 0.16);
-      } catch(e) {}
-    }
-
-    return { playUnlock, playClose };
-  })();
-
-  // =========================================================================
   // 4 PROJECT VIDEO INDEPENDENT ROLLING SHUTTER DOORS
   // =========================================================================
   window.openProjectDoor = function(projectId) {
     const thumb = document.querySelector(`.project-thumb[data-project-id="${projectId}"]`);
     const door = document.getElementById(`door-${projectId}`);
     if (!thumb || !door) return;
-
-    // Trigger mechanical sound effect
-    ShutterAudio.playUnlock();
-
-    // Trigger golden unlock shockwave burst
-    let burst = thumb.querySelector('.shutter-unlock-burst');
-    if (!burst) {
-      burst = document.createElement('div');
-      burst.className = 'shutter-unlock-burst';
-      thumb.appendChild(burst);
-    }
-    burst.classList.remove('burst-active');
-    void burst.offsetWidth;
-    burst.classList.add('burst-active');
-
-    // Trigger golden laser scanline sweep
-    let beam = thumb.querySelector('.shutter-reveal-beam');
-    if (!beam) {
-      beam = document.createElement('div');
-      beam.className = 'shutter-reveal-beam';
-      thumb.appendChild(beam);
-    }
-    beam.classList.remove('beam-active');
-    void beam.offsetWidth;
-    beam.classList.add('beam-active');
-
-    // Update status badge to ACCESS GRANTED
-    const badge = door.querySelector('.shutter-badge');
-    if (badge) {
-      badge.classList.add('badge-unlocked');
-      const badgeText = badge.querySelector('span:last-child');
-      if (badgeText) badgeText.textContent = 'ACCESS GRANTED';
-    }
 
     door.classList.add('door-opened');
     thumb.classList.add('shutter-is-open');
@@ -595,17 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const door = document.getElementById(`door-${projectId}`);
     if (!thumb || !door) return;
 
-    // Trigger mechanical latch closing sound
-    ShutterAudio.playClose();
-
-    // Reset badge state
-    const badge = door.querySelector('.shutter-badge');
-    if (badge) {
-      badge.classList.remove('badge-unlocked');
-      const badgeText = badge.querySelector('span:last-child');
-      if (badgeText) badgeText.textContent = 'SHUTTER LOCKED';
-    }
-
     door.classList.remove('door-opened');
     thumb.classList.remove('shutter-is-open');
 
@@ -617,17 +446,6 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.handleProjectCardClick = function(projectId, event) {
-    const thumb = document.querySelector(`.project-thumb[data-project-id="${projectId}"]`);
-    if (thumb && !thumb.classList.contains('shutter-is-open')) {
-      // Shutter door is closed: clicking opens that video's door!
-      if (event) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      openProjectDoor(projectId);
-      return;
-    }
-    // Shutter door is open: opens the project modal case study
     openProjectModal(projectId);
   };
 
@@ -726,6 +544,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initHeadingAnimations() {
     const slideHeadings = document.querySelectorAll('.slide-heading');
     const outroHeading = document.querySelector('.outro-heading');
+    const outroFrame = document.querySelector('.outro-photo-frame');
 
     // Prepare slide headings for dynamic reveal
     slideHeadings.forEach(h => {
@@ -734,6 +553,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (outroHeading) {
       outroHeading.classList.add('heading-ready');
+    }
+    if (outroFrame) {
+      outroFrame.classList.add('frame-ready');
     }
 
     // IntersectionObserver to reveal headings when scrolling into view
@@ -747,12 +569,14 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('heading-revealed');
+          entry.target.classList.add('frame-revealed');
         }
       });
     }, observerOptions);
 
     slideHeadings.forEach(h => headingObserver.observe(h));
     if (outroHeading) headingObserver.observe(outroHeading);
+    if (outroFrame) headingObserver.observe(outroFrame);
   }
 
   initHeadingAnimations();
