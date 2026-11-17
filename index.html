@@ -165,6 +165,20 @@
   <!-- ============================================================== -->
   <section id="hero" class="editorial-slide min-h-screen flex flex-col justify-between bg-[#0A0A0A] text-white relative overflow-hidden p-6 sm:p-10 lg:p-14 select-none" data-slide-index="0">
     
+    <!-- Full-Quality Video Background -->
+    <video 
+      class="hero-bg-video absolute inset-0 w-full h-full object-cover z-0 pointer-events-none" 
+      src="assets/hero/hero-video.mp4" 
+      autoplay 
+      loop 
+      muted 
+      playsinline
+      preload="auto"
+    ></video>
+
+    <!-- Subtle Vignette / Contrast Layer to protect text legibility while preserving 100% video vibrancy -->
+    <div class="absolute inset-0 bg-black/25 z-[1] pointer-events-none"></div>
+
     <!-- TOP BAR: Minimalist Hamburger Menu -->
     <div class="flex items-center justify-end w-full z-20 relative">
       <!-- Minimalist Hamburger Menu Button (Matching Reference "=" Icon) -->
@@ -174,31 +188,31 @@
       </button>
     </div>
 
-    <!-- MAIN EDITORIAL CONTENT: "My Creative" -->
-    <div class="w-full my-auto py-8 sm:py-16 relative z-10">
+    <!-- MAIN EDITORIAL CONTENT: "My Creative" in Center Black Space -->
+    <div class="w-full my-auto py-8 sm:py-12 relative z-10 flex flex-col items-center justify-center text-center">
       <!-- Big Editorial Typography -->
-      <div class="hero-typography-wrap z-20 max-w-5xl">
+      <div class="hero-typography-wrap z-20 max-w-4xl mx-auto flex flex-col items-center justify-center">
         <!-- Line 1: "My" -->
-        <div class="hero-font-heading hero-animate-1 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-none">
+        <div class="hero-font-heading hero-animate-1 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[10.5rem] font-extrabold tracking-tight text-white leading-none drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
           My
         </div>
 
         <!-- Line 2: "Creative" -->
-        <div class="hero-font-heading hero-animate-2 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-[0.92] mt-2 sm:mt-4">
+        <div class="hero-font-heading hero-animate-2 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[10.5rem] font-extrabold tracking-tight text-white leading-[0.92] mt-2 sm:mt-3 drop-shadow-[0_4px_30px_rgba(0,0,0,0.8)]">
           Creative
+        </div>
+
+        <!-- Bio / Value Proposition Statement centered below -->
+        <div class="max-w-md sm:max-w-lg mx-auto mt-6 sm:mt-8 px-4">
+          <p class="text-zinc-300 text-xs sm:text-sm md:text-base leading-relaxed font-normal text-center drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            AI Content Creator &amp; Video Editor specializing in generative AI, cinematic video editing, Meta ads, and digital storytelling.
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- BOTTOM ROW: Bio Description -->
-    <div class="flex items-end justify-start w-full z-20 pt-6">
-      <!-- Bio / Value Proposition Statement -->
-      <div class="max-w-xs sm:max-w-sm md:max-w-md">
-        <p class="text-zinc-400 text-xs sm:text-[0.84rem] md:text-sm leading-relaxed font-normal">
-          AI Content Creator &amp; Video Editor specializing in generative AI, cinematic video editing, Meta ads, and digital storytelling. Turning creative ideas into impactful digital reality.
-        </p>
-      </div>
-    </div>
+    <!-- Empty Spacer / Bottom Anchor for Balanced Layout -->
+    <div class="w-full z-20 h-6"></div>
 
   </section>
 
