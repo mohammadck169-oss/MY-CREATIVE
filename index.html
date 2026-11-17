@@ -174,10 +174,10 @@
       </button>
     </div>
 
-    <!-- MAIN EDITORIAL CONTENT: "My Creative" -->
-    <div class="w-full my-auto py-8 sm:py-16 relative z-10">
-      <!-- Big Editorial Typography -->
-      <div class="hero-typography-wrap z-20 max-w-5xl">
+    <!-- MAIN EDITORIAL CONTENT: "My Creative" + Right Showcase Visual -->
+    <div class="w-full my-auto py-8 sm:py-16 relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+      <!-- Big Editorial Typography (Left) -->
+      <div class="hero-typography-wrap z-20 max-w-3xl xl:max-w-4xl">
         <!-- Line 1: "My" -->
         <div class="hero-font-heading hero-animate-1 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-none">
           My
@@ -186,6 +186,43 @@
         <!-- Line 2: "Creative" -->
         <div class="hero-font-heading hero-animate-2 text-7xl sm:text-8xl md:text-9xl lg:text-[8.5rem] xl:text-[11rem] font-normal tracking-tight text-white leading-[0.92] mt-2 sm:mt-4">
           Creative
+        </div>
+      </div>
+
+      <!-- RIGHT HERO VISUAL: Ultra-HD Cybernetic AI Portrait in Statement Luxury Frame -->
+      <div class="hero-visual-container z-20 w-full max-w-[340px] sm:max-w-[400px] lg:max-w-[420px] xl:max-w-[470px] lg:mr-4 xl:mr-10">
+        <div class="relative group">
+          <!-- Ambient Cybernetic Glow Aura (Matching Gold & Neon Circuits) -->
+          <div class="absolute -inset-4 bg-gradient-to-tr from-amber-500/30 via-white/10 to-amber-300/10 rounded-[2.5rem] blur-2xl opacity-60 group-hover:opacity-95 transition-opacity duration-700 pointer-events-none"></div>
+
+          <!-- Statement Frame with Smooth Rounded Corners & Fine Glass Border -->
+          <div class="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden border border-white/25 bg-black/60 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] backdrop-blur-sm transition-all duration-500 group-hover:scale-[1.02] group-hover:border-white/50">
+            <img 
+              src="assets/hero/ai-cyborg-hero.jpg" 
+              alt="AI Generative Cybernetic Visionary Portrait" 
+              class="w-full h-auto max-h-[55vh] lg:max-h-[62vh] object-cover object-center block transition-transform duration-700 group-hover:scale-105"
+              loading="eager"
+            >
+            
+            <!-- Subtle Gradient Overlay at bottom for luxury contrast -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-black/15 pointer-events-none"></div>
+
+            <!-- Top-Left Glassmorphic Badge -->
+            <div class="absolute top-4 left-4 z-10">
+              <span class="pill-badge pill-badge-sm bg-black/70 backdrop-blur-md border-white/30 text-white text-[10px] tracking-widest font-mono uppercase shadow-lg">
+                AI CREATIVE &bull; ULTRA HD
+              </span>
+            </div>
+
+            <!-- Bottom Statement Caption -->
+            <div class="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-xs text-white/90 font-medium">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                <span class="tracking-wider uppercase text-[11px] font-bold text-white font-outfit">Generative Vision</span>
+              </div>
+              <span class="text-zinc-400 text-[10px] tracking-widest font-mono uppercase">VAVACHAN_AI</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
