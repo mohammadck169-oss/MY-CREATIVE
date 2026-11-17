@@ -59,6 +59,10 @@ while ($listener.IsListening) {
         $relativePath = $urlPath.TrimStart("/").Replace("/", [System.IO.Path]::DirectorySeparatorChar)
         $filePath = [System.IO.Path]::Combine($baseDir, $relativePath)
 
+        if ([System.IO.Directory]::Exists($filePath)) {
+            $filePath = [System.IO.Path]::Combine($filePath, "index.html")
+        }
+
         if ([System.IO.File]::Exists($filePath)) {
             $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
             $mime = $mimeTypes[$ext]

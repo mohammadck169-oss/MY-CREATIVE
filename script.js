@@ -408,47 +408,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // =========================================================================
-  // 4 PROJECT VIDEO INDEPENDENT ROLLING SHUTTER DOORS
-  // =========================================================================
-  window.openProjectDoor = function(projectId) {
-    const thumb = document.querySelector(`.project-thumb[data-project-id="${projectId}"]`);
-    const door = document.getElementById(`door-${projectId}`);
-    if (!thumb || !door) return;
-
-    door.classList.add('door-opened');
-    thumb.classList.add('shutter-is-open');
-
-    // Autoplay video if present inside thumbnail
-    const video = thumb.querySelector('video');
-    if (video) {
-      video.play().catch(() => {});
-    }
-
-    if (window.lucide) {
-      window.lucide.createIcons();
-    }
-  };
-
-  window.closeProjectDoor = function(projectId) {
-    const thumb = document.querySelector(`.project-thumb[data-project-id="${projectId}"]`);
-    const door = document.getElementById(`door-${projectId}`);
-    if (!thumb || !door) return;
-
-    door.classList.remove('door-opened');
-    thumb.classList.remove('shutter-is-open');
-
-    // Pause video if present inside thumbnail
-    const video = thumb.querySelector('video');
-    if (video) {
-      try { video.pause(); } catch(e) {}
-    }
-  };
-
-  window.handleProjectCardClick = function(projectId, event) {
-    openProjectModal(projectId);
-  };
-
   // Fullscreen Photo Modal Functions
   window.openFullscreenPhoto = function() {
     const modal = document.getElementById('fullscreen-photo-modal');
@@ -544,7 +503,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function initHeadingAnimations() {
     const slideHeadings = document.querySelectorAll('.slide-heading');
     const outroHeading = document.querySelector('.outro-heading');
-    const outroFrame = document.querySelector('.outro-photo-frame');
 
     // Prepare slide headings for dynamic reveal
     slideHeadings.forEach(h => {
@@ -553,9 +511,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (outroHeading) {
       outroHeading.classList.add('heading-ready');
-    }
-    if (outroFrame) {
-      outroFrame.classList.add('frame-ready');
     }
 
     // IntersectionObserver to reveal headings when scrolling into view
@@ -569,14 +524,12 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('heading-revealed');
-          entry.target.classList.add('frame-revealed');
         }
       });
     }, observerOptions);
 
     slideHeadings.forEach(h => headingObserver.observe(h));
     if (outroHeading) headingObserver.observe(outroHeading);
-    if (outroFrame) headingObserver.observe(outroFrame);
   }
 
   initHeadingAnimations();
